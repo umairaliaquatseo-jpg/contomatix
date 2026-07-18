@@ -9,6 +9,10 @@
       <h1><%= service.title %></h1>
     </div>
     <p><%= service.summary %></p>
+    <div class="hero-actions" style="margin-top: 22px;">
+      <a href="/contact" class="btn btn-primary">Get a free audit &rarr;</a>
+      <a href="https://wa.me/<%= site.whatsappNumber %>" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp us</a>
+    </div>
   </div>
 </section>
 
@@ -16,7 +20,9 @@
   <div class="container service-detail-grid">
     <div>
       <h2>Overview</h2>
-      <p><%= service.description %></p>
+      <p style="color: var(--text-dim);"><%= service.description %></p>
+
+      <%- include('../partials/video-panel', { videoTitle: service.title + ' — how it works' }) %>
 
       <h2>What's included</h2>
       <ul class="service-points">
@@ -25,10 +31,19 @@
         <% }); %>
       </ul>
 
-      <div class="cta-band" style="margin-top:40px;">
-        <h2>Interested in <%= service.title %>?</h2>
+      <h2 style="margin-top: 1.8em;">The difference it makes</h2>
+      <p style="color: var(--text-dim);">Drag the slider to compare a typical site before and after a sustained campaign.</p>
+      <%- include('../partials/compare') %>
+
+      <div class="cta-band" style="margin-top: 44px;">
+        <span class="cta-orb cta-orb-1"></span>
+        <span class="cta-orb cta-orb-2"></span>
+        <h2>Interested in <span class="grad-text"><%= service.title %></span>?</h2>
         <p>Get in touch and we'll walk you through how it fits your site.</p>
-        <a href="/contact" class="btn btn-primary">Get in touch</a>
+        <div class="cta-actions">
+          <a href="/contact" class="btn btn-primary">Get in touch</a>
+          <a href="https://wa.me/<%= site.whatsappNumber %>" target="_blank" rel="noopener" class="btn btn-glass">Chat on WhatsApp</a>
+        </div>
       </div>
     </div>
 

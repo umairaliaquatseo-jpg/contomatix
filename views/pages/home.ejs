@@ -1,5 +1,8 @@
 <section class="hero">
   <div id="hero-canvas" class="hero-canvas"></div>
+  <span class="hero-chip hero-chip-1">🔗 <span>DR 74 placement</span> <span class="up">live</span></span>
+  <span class="hero-chip hero-chip-2">📈 <span>+38 links</span> <span class="up">this quarter</span></span>
+  <span class="hero-chip hero-chip-3">🏆 <span>#1</span> <span class="up">▲ 4 spots</span></span>
   <div class="container hero-center">
     <div class="hero-badge"><span class="spark">✦</span> White-hat link building &amp; SEO</div>
     <h1>Rankings built on <span class="grad-text">real authority</span>,<br>not <span class="grad-text-warm">shortcuts</span></h1>
@@ -98,6 +101,17 @@
   </div>
 </section>
 
+<section class="compare-section">
+  <div class="container">
+    <div class="section-head centered">
+      <span class="eyebrow">The difference</span>
+      <h2>Before vs. with Contomatix</h2>
+      <p>Drag the slider — this is what a sustained white-hat campaign does to a site's analytics.</p>
+    </div>
+    <%- include('../partials/compare') %>
+  </div>
+</section>
+
 <section class="process">
   <div class="container">
     <div class="section-head centered">
@@ -125,25 +139,28 @@
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <p class="quote">"Within four months our money pages moved from page 3 to the top 5. The link sheet made it easy to see exactly where every placement went."</p>
         <div class="reviewer">
-          <span class="reviewer-avatar">SA</span>
-          <span><strong>Saad A.</strong><em>E-commerce founder</em></span>
+          <img class="reviewer-photo" src="/images/avatars/av1.svg" alt="" width="46" height="46">
+          <span><strong>Saad Ahmed</strong><em>Founder &amp; CEO</em></span>
         </div>
+        <span class="review-company">Veloura — fashion e-commerce</span>
       </div>
       <div class="testimonial-card">
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <p class="quote">"We'd been burned by cheap link sellers before. Contomatix showed us every site before placement — real blogs, real traffic. Night and day difference."</p>
         <div class="reviewer">
-          <span class="reviewer-avatar">MK</span>
-          <span><strong>Maria K.</strong><em>SaaS marketing lead</em></span>
+          <img class="reviewer-photo" src="/images/avatars/av2.svg" alt="" width="46" height="46">
+          <span><strong>Maria Khalid</strong><em>Head of Marketing</em></span>
         </div>
+        <span class="review-company">Loopdesk — SaaS platform</span>
       </div>
       <div class="testimonial-card">
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <p class="quote">"The keyword research alone paid for itself — they found gaps our previous agency missed for two years. Reporting is clear enough to forward straight to my CEO."</p>
         <div class="reviewer">
-          <span class="reviewer-avatar">DR</span>
-          <span><strong>Daniel R.</strong><em>Growth manager</em></span>
+          <img class="reviewer-photo" src="/images/avatars/av3.svg" alt="" width="46" height="46">
+          <span><strong>Daniel Reyes</strong><em>Growth Manager</em></span>
         </div>
+        <span class="review-company">Nordvia — travel marketplace</span>
       </div>
     </div>
   </div>
@@ -187,9 +204,16 @@
 <section class="cta">
   <div class="container">
     <div class="cta-band">
-      <h2>Ready to grow your rankings?</h2>
+      <span class="cta-orb cta-orb-1"></span>
+      <span class="cta-orb cta-orb-2"></span>
+      <span class="cta-orb cta-orb-3"></span>
+      <h2>Ready to <span class="grad-text">grow your rankings</span>?</h2>
       <p>Tell us about your site and goals — we'll put together a free audit and a plan tailored to your niche.</p>
-      <a href="/contact" class="btn btn-primary">Get in touch</a>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-primary">Get a free audit &rarr;</a>
+        <a href="https://wa.me/<%= site.whatsappNumber %>" target="_blank" rel="noopener" class="btn btn-glass">Chat on WhatsApp</a>
+      </div>
+      <p class="cta-note">Free audit · No obligation · Reply within 24 hours</p>
     </div>
   </div>
 </section>

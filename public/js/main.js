@@ -226,9 +226,88 @@ function initCounters() {
   });
 }
 
+// ---------- Cursor-follow glow on cards (theme hover animation) ----------
+function initHoverGlow() {
+  var cards = document.querySelectorAll(
+    '.service-card, .testimonial-card, .team-card, .post-card, .process-step, .contact-info-card, .story-card'
+  );
+  cards.forEach(function (el) {
+    el.classList.add('hover-glow');
+    el.addEventListener('mousemove', function (e) {
+      var rect = el.getBoundingClientRect();
+      el.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+      el.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+    });
+  });
+}
+
+// ---------- Subtle 3D tilt on media panels ----------
+function initTilt() {
+  document.querySelectorAll('.feature-media, [data-tilt], .hero-shot-frame').forEach(function (el) {
+    el.style.transition = 'transform 0.18s ease';
+    el.addEventListener('mousemove', function (e) {
+      var r = el.getBoundingClientRect();
+      var rx = ((e.clientY - r.top) / r.height - 0.5) * -5;
+      var ry = ((e.clientX - r.left) / r.width - 0.5) * 5;
+      el.style.transform = 'perspective(900px) rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg)';
+    });
+    el.addEventListener('mouseleave', function () {
+      el.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)';
+    });
+  });
+}
+
+// ---------- Before/after comparison slider ----------
+function initCompare() {
+  document.querySelectorAll('[data-compare]').forEach(function (el) {
+    function setCut(clientX) {
+      var r = el.getBoundingClientRect();
+      var pct = Math.min(Math.max((clientX - r.left) / r.width, 0.06), 0.94) * 100;
+      el.style.setProperty('--cut', pct.toFixed(2) + '%');
+    }
+    var dragging = false;
+    el.addEventListener('pointerdown', function (e) {
+      dragging = true;
+      el.setPointerCapture(e.pointerId);
+      setCut(e.clientX);
+    });
+    el.addEventListener('pointermove', function (e) {
+      if (dragging) setCut(e.clientX);
+    });
+    ['pointerup', 'pointercancel'].forEach(function (evt) {
+      el.addEventListener(evt, function () { dragging = false; });
+    });
+    // gentle auto-sweep on first view so users notice it's interactive
+    if ('IntersectionObserver' in window) {
+      var swept = false;
+      new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !swept) {
+            swept = true;
+            el.style.transition = '--cut 0s';
+            var start = null;
+            function sweep(ts) {
+              if (!start) start = ts;
+              var p = Math.min((ts - start) / 1600, 1);
+              var eased = 0.5 + Math.sin(p * Math.PI * 2) * 0.18 * (1 - p);
+              el.style.setProperty('--cut', (eased * 100).toFixed(2) + '%');
+              if (p < 1) requestAnimationFrame(sweep);
+            }
+            requestAnimationFrame(sweep);
+            obs.disconnect();
+          }
+        });
+      }, { threshold: 0.4 }).observe(el);
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   initHeroScene('hero-canvas');
   initAmbientScene('ambient-canvas');
   initScrollReveal();
   initCounters();
+  initHoverGlow();
+  initTilt();
+  initCompare();
 });

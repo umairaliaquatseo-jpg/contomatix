@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 520" font-family="Inter, -apple-system, sans-serif" preserveAspectRatio="xMidYMid slice">
+  <rect width="1100" height="520" fill="#F6FDFB"/>
+  <rect x="36" y="30" width="216" height="36" rx="18" fill="#0EA5A0"/>
+  <text x="58" y="53" font-size="14" font-weight="700" fill="#FFFFFF">With Contomatix</text>
+  <circle cx="228" cy="48" r="5" fill="#B5F5E4"/>
+
+  <g font-size="12.5" fill="#6B8A85">
+    <text x="40" y="112">TOTAL CLICKS</text>
+    <text x="300" y="112">TOTAL IMPRESSIONS</text>
+    <text x="600" y="112">AVG POSITION</text>
+    <text x="860" y="112">REFERRING DOMAINS</text>
+  </g>
+  <g font-size="30" font-weight="700" fill="#16192A">
+    <text x="40" y="150">11.1K</text>
+    <text x="300" y="150">5.0M</text>
+    <text x="600" y="150">#2.7</text>
+    <text x="860" y="150">312</text>
+  </g>
+  <g font-size="13" font-weight="600" fill="#0B807C">
+    <text x="132" y="150">▲ +247%</text>
+    <text x="392" y="150">▲ +12×</text>
+    <text x="678" y="150">▲ top 3</text>
+    <text x="922" y="150">▲ +258</text>
+  </g>
+
+  <g stroke="#E2F2EE" stroke-width="1">
+    <line x1="60" y1="230" x2="1050" y2="230"/><line x1="60" y1="290" x2="1050" y2="290"/>
+    <line x1="60" y1="350" x2="1050" y2="350"/><line x1="60" y1="410" x2="1050" y2="410"/><line x1="60" y1="470" x2="1050" y2="470"/>
+  </g>
+  <g font-size="11" fill="#9DB8B2">
+    <text x="30" y="234">500</text><text x="30" y="294">400</text><text x="30" y="354">300</text><text x="30" y="414">200</text><text x="30" y="474">100</text>
+  </g>
+  <path d="M60 452 C 200 448, 330 430, 460 396 C 620 354, 820 296, 1050 238 L 1050 480 L 60 480 Z" fill="#0EA5A0" opacity="0.1"/>
+  <path d="M60 452 C 200 448, 330 430, 460 396 C 620 354, 820 296, 1050 238" fill="none" stroke="#0EA5A0" stroke-width="3.5"/>
+  <path d="M60 462 C 240 456, 420 438, 600 410 C 780 380, 920 348, 1050 316" fill="none" stroke="#F59E0B" stroke-width="2.5" opacity="0.85"/>
+  <path d="M60 468 C 260 464, 460 452, 640 434 C 800 418, 940 402, 1050 388" fill="none" stroke="#F472B6" stroke-width="2.5" opacity="0.7"/>
+  <circle cx="1050" cy="238" r="6" fill="#0EA5A0"/>
+</svg>
