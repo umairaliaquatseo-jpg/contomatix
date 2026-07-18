@@ -31,7 +31,7 @@ function initHeroScene(canvasId) {
 
   var scene = new THREE.Scene();
   var camera = new THREE.PerspectiveCamera(55, width / height, 0.1, 1000);
-  camera.position.z = 26;
+  camera.position.z = 32;
 
   var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
   renderer.setSize(width, height);
@@ -147,7 +147,7 @@ function initAmbientScene(canvasId) {
 function initScrollReveal() {
   var selectors = '.service-card, .process-step, .post-card, .team-card, .story-card, ' +
     '.story-featured, .cta-band, .section-head, .contact-info-card, .contact-form, ' +
-    '.newsletter-block, .feature-copy, .feature-art';
+    '.newsletter-block, .feature-row';
   var items = document.querySelectorAll(selectors);
   if (!items.length) return;
 
