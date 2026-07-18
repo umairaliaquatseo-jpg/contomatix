@@ -56,29 +56,6 @@
   </div>
 </section>
 
-<% if (typeof recentPosts !== 'undefined' && recentPosts.length) { %>
-<section class="recent-posts">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">From the blog</span>
-      <h2>Latest insights</h2>
-    </div>
-    <div class="post-grid">
-      <% recentPosts.forEach(function(p) { %>
-        <a class="post-card" href="/blog/<%= p.slug %>">
-          <div class="post-image"></div>
-          <div class="post-body">
-            <span class="story-tag"><%= p.category %></span>
-            <h3><%= p.title %></h3>
-            <p><%= p.excerpt %></p>
-          </div>
-        </a>
-      <% }); %>
-    </div>
-  </div>
-</section>
-<% } %>
-
 <section class="cta">
   <div class="container">
     <div class="cta-band">

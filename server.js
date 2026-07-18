@@ -41,8 +41,7 @@ app.get('/', (req, res) => {
   res.render('pages/home', {
     title: 'Contomatix — Link Building & SEO Services',
     description: 'Contomatix helps brands grow organic traffic through link building, guest posting, on-page & off-page SEO, and keyword research.',
-    pageClass: 'page-home',
-    recentPosts: blogPosts.slice(0, 3)
+    pageClass: 'page-home'
   });
 });
 
