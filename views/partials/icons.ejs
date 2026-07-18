@@ -1,0 +1,13 @@
+<%
+// Service icon set — pass `icon` (matches the `icon` key in data/services.js).
+// All 20x20, stroke-based, inherit currentColor.
+var icons = {
+  link: '<path d="M9 15l6-6M8.5 12.5l-2.3 2.3a3.5 3.5 0 1 0 5 5l2.3-2.3M15.5 11.5l2.3-2.3a3.5 3.5 0 1 0-5-5l-2.3 2.3"/>',
+  insert: '<path d="M4 6h16M4 18h16M12 10v7M12 17l-3-3M12 17l3-3"/><path d="M9 10h6" stroke-dasharray="1.5 2.5"/>',
+  post: '<path d="M6 3h9l4 4v14H6zM14.5 3v4.5H19"/><path d="M9 12h7M9 15.5h7M9 8.5h3"/>',
+  onpage: '<rect x="4" y="4" width="16" height="16" rx="2.5"/><path d="M4 9h16M9 9v11"/><path d="M12.5 14l1.8 1.8 3.2-3.2"/>',
+  offpage: '<circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.6 2.3 4 5.2 4 8.5s-1.4 6.2-4 8.5c-2.6-2.3-4-5.2-4-8.5s1.4-6.2 4-8.5z"/>',
+  keyword: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.3 15.3L20 20"/><path d="M8 10.5h5M10.5 8v5"/>'
+};
+%>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><%- icons[icon] || icons.link %></svg>

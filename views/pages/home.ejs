@@ -3,7 +3,7 @@
   <div class="container hero-inner">
     <div class="hero-copy">
       <span class="eyebrow">SEO &amp; Link Building</span>
-      <h1>Rankings built on real authority, not shortcuts.</h1>
+      <h1>Rankings built on <span class="grad-text">real authority</span>, not shortcuts.</h1>
       <p>Contomatix helps brands grow organic traffic through white-hat link building, guest posting, on-page &amp; off-page SEO, and keyword research that actually moves the needle.</p>
       <div class="hero-actions">
         <a href="/contact" class="btn btn-primary">Get a free audit</a>
@@ -30,7 +30,7 @@
       <% services.forEach(function(s) { %>
         <div class="service-card">
           <div class="service-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
+            <%- include('../partials/icons', { icon: s.icon }) %>
           </div>
           <h3><%= s.title %></h3>
           <p><%= s.summary %></p>

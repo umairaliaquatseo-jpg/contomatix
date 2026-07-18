@@ -2,7 +2,12 @@
   <div id="ambient-canvas" class="ambient-canvas"></div>
   <div class="container page-hero-inner">
     <span class="eyebrow">Service</span>
-    <h1><%= service.title %></h1>
+    <div class="service-hero-row">
+      <div class="service-icon service-icon-lg">
+        <%- include('../partials/icons', { icon: service.icon }) %>
+      </div>
+      <h1><%= service.title %></h1>
+    </div>
     <p><%= service.summary %></p>
   </div>
 </section>
