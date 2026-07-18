@@ -98,6 +98,22 @@ app.get('/about', (req, res) => {
   });
 });
 
+app.get('/privacy-policy', (req, res) => {
+  res.render('pages/privacy', {
+    title: 'Privacy Policy — Contomatix',
+    description: 'How Contomatix collects, uses, and protects your information.',
+    pageClass: 'page-legal'
+  });
+});
+
+app.get('/terms', (req, res) => {
+  res.render('pages/terms', {
+    title: 'Terms of Service — Contomatix',
+    description: 'The terms governing use of contomatix.com and Contomatix services.',
+    pageClass: 'page-legal'
+  });
+});
+
 app.get('/contact', (req, res) => {
   res.render('pages/contact', {
     title: 'Contact Us — Contomatix',

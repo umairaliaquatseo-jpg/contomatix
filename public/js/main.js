@@ -73,6 +73,26 @@ function initHeroScene(canvasId) {
     }
   }
 
+  // 3D chain-link object: two interlocked tori (right side of the hero)
+  var chain = new THREE.Group();
+  var torusGeo = new THREE.TorusGeometry(2.6, 0.5, 20, 56);
+  var chainTeal = new THREE.MeshBasicMaterial({ color: 0x0ea5a0, wireframe: true, transparent: true, opacity: 0.55 });
+  var chainAmber = new THREE.MeshBasicMaterial({ color: 0xf59e0b, wireframe: true, transparent: true, opacity: 0.5 });
+  var ringA = new THREE.Mesh(torusGeo, chainTeal);
+  var ringB = new THREE.Mesh(torusGeo, chainAmber);
+  ringB.position.x = 3.4;
+  ringB.rotation.y = Math.PI / 2;
+  chain.add(ringA);
+  chain.add(ringB);
+  chain.position.set(13.5, 4.5, -2);
+  chain.rotation.z = 0.4;
+  scene.add(chain);
+
+  // a lone slow ring on the left for balance
+  var soloRing = new THREE.Mesh(new THREE.TorusGeometry(1.9, 0.34, 18, 48), chainTeal);
+  soloRing.position.set(-14.5, -5.5, -3);
+  scene.add(soloRing);
+
   var mouseX = 0, mouseY = 0;
   container.addEventListener('mousemove', function (e) {
     var rect = container.getBoundingClientRect();
@@ -80,11 +100,19 @@ function initHeroScene(canvasId) {
     mouseY = ((e.clientY - rect.top) / height) - 0.5;
   });
 
+  var t = 0;
   function animate() {
     requestAnimationFrame(animate);
+    t += 0.01;
     group.rotation.y += 0.0018;
     group.rotation.x += (mouseY * 0.3 - group.rotation.x) * 0.02;
     group.rotation.y += (mouseX * 0.2) * 0.01;
+    chain.rotation.x += 0.005;
+    chain.rotation.y += 0.003;
+    chain.position.y = 4.5 + Math.sin(t) * 0.7;
+    soloRing.rotation.x += 0.004;
+    soloRing.rotation.y += 0.006;
+    soloRing.position.y = -5.5 + Math.cos(t * 0.8) * 0.5;
     renderer.render(scene, camera);
   }
   animate();
@@ -147,7 +175,7 @@ function initAmbientScene(canvasId) {
 function initScrollReveal() {
   var selectors = '.service-card, .process-step, .post-card, .team-card, .story-card, ' +
     '.story-featured, .cta-band, .section-head, .contact-info-card, .contact-form, ' +
-    '.newsletter-block, .feature-row';
+    '.newsletter-block, .feature-row, .testimonial-card, .faq-list details';
   var items = document.querySelectorAll(selectors);
   if (!items.length) return;
 

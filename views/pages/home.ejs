@@ -21,12 +21,24 @@
   </div>
 </section>
 
+<div class="trust-strip">
+  <div class="container">
+    <p class="trust-label">Campaigns powered by industry-standard SEO platforms</p>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Ahrefs</span><i>◆</i><span>Semrush</span><i>◆</i><span>Moz</span><i>◆</i><span>Google Search Console</span><i>◆</i><span>Majestic</span><i>◆</i><span>Screaming Frog</span><i>◆</i><span>Surfer</span><i>◆</i><span>Google Analytics</span><i>◆</i>
+      <span>Ahrefs</span><i>◆</i><span>Semrush</span><i>◆</i><span>Moz</span><i>◆</i><span>Google Search Console</span><i>◆</i><span>Majestic</span><i>◆</i><span>Screaming Frog</span><i>◆</i><span>Surfer</span><i>◆</i><span>Google Analytics</span><i>◆</i>
+    </div>
+  </div>
+</div>
+
 <section class="services">
   <div class="container">
     <div class="section-head centered">
-      <span class="eyebrow">What we do</span>
-      <h2>Six services. One goal: rankings that hold.</h2>
-      <p>Every service is built to compound with the others — links, content, and structure working together.</p>
+      <span class="eyebrow">Full SEO strategy</span>
+      <h2>One connected strategy — not one-off links</h2>
+      <p>Six services that compound with each other: research finds the targets, content and links build the authority, on-page work makes it stick.</p>
     </div>
     <div class="service-grid">
       <% services.forEach(function(s) { %>
@@ -36,6 +48,11 @@
           </div>
           <h3><%= s.title %></h3>
           <p><%= s.summary %></p>
+          <ul class="card-points">
+            <% s.points.slice(0, 3).forEach(function(pt) { %>
+              <li><%= pt %></li>
+            <% }); %>
+          </ul>
           <a href="/services/<%= s.slug %>">Learn more &rarr;</a>
         </div>
       <% }); %>
@@ -92,6 +109,77 @@
       <div class="process-step"><span class="step-num">02</span><h4>Strategy</h4><p>A roadmap prioritized around the keywords and links that matter most.</p></div>
       <div class="process-step"><span class="step-num">03</span><h4>Execution</h4><p>Outreach, content, and on-page work carried out and tracked.</p></div>
       <div class="process-step"><span class="step-num">04</span><h4>Reporting</h4><p>Monthly reporting so you always know what's working.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="container">
+    <div class="section-head centered">
+      <span class="eyebrow">Reviews</span>
+      <h2>What clients say</h2>
+    </div>
+    <div class="testimonial-grid">
+      <!-- Placeholder reviews — replace with real client feedback before launch -->
+      <div class="testimonial-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="quote">"Within four months our money pages moved from page 3 to the top 5. The link sheet made it easy to see exactly where every placement went."</p>
+        <div class="reviewer">
+          <span class="reviewer-avatar">SA</span>
+          <span><strong>Saad A.</strong><em>E-commerce founder</em></span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="quote">"We'd been burned by cheap link sellers before. Contomatix showed us every site before placement — real blogs, real traffic. Night and day difference."</p>
+        <div class="reviewer">
+          <span class="reviewer-avatar">MK</span>
+          <span><strong>Maria K.</strong><em>SaaS marketing lead</em></span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="quote">"The keyword research alone paid for itself — they found gaps our previous agency missed for two years. Reporting is clear enough to forward straight to my CEO."</p>
+        <div class="reviewer">
+          <span class="reviewer-avatar">DR</span>
+          <span><strong>Daniel R.</strong><em>Growth manager</em></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container faq-inner">
+    <div class="section-head centered">
+      <span class="eyebrow">FAQs</span>
+      <h2>Questions, answered</h2>
+    </div>
+    <div class="faq-list">
+      <details>
+        <summary>How long until I see results?<span class="faq-icon"></span></summary>
+        <p>Most sites see meaningful keyword movement within 3–6 months. Link building compounds: early links start the momentum, and rankings accelerate as authority builds. We set realistic milestones in your first-month roadmap.</p>
+      </details>
+      <details>
+        <summary>Are your links white-hat and safe?<span class="faq-icon"></span></summary>
+        <p>Yes. Every placement is on a real site with real organic traffic, earned through manual outreach. No PBNs, no link farms, no automated schemes — nothing that puts your domain at risk.</p>
+      </details>
+      <details>
+        <summary>What's the difference between link building and link insertion?<span class="faq-icon"></span></summary>
+        <p>Link building covers the full strategy — outreach, guest posts, and new placements. Link insertion (niche edits) places your link inside an existing article that already ranks and gets traffic, so authority passes faster. Most campaigns combine both.</p>
+      </details>
+      <details>
+        <summary>Do you guarantee #1 rankings?<span class="faq-icon"></span></summary>
+        <p>No — and you should be wary of anyone who does. Google's algorithm isn't for sale. What we do guarantee: real links on vetted sites, transparent reporting, and a strategy adjusted monthly based on what the data shows.</p>
+      </details>
+      <details>
+        <summary>Can I approve sites before links go live?<span class="faq-icon"></span></summary>
+        <p>Yes. You get the target list with metrics (DR, traffic, niche) before we place anything, and a live link sheet you can check at any time.</p>
+      </details>
+      <details>
+        <summary>How do we get started?<span class="faq-icon"></span></summary>
+        <p>Send us your site through the contact form or WhatsApp. We'll run a free audit of your backlink profile and keywords, then send a plan tailored to your niche — no obligation.</p>
+      </details>
     </div>
   </div>
 </section>
