@@ -21,13 +21,10 @@
   }
 })();
 
-// ---------- Three.js: reduced motion check ----------
-var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
 // ---------- Hero 3D scene: rotating link/node network ----------
 function initHeroScene(canvasId) {
   var container = document.getElementById(canvasId);
-  if (!container || typeof THREE === 'undefined' || prefersReducedMotion) return;
+  if (!container || typeof THREE === 'undefined') return;
 
   var width = container.clientWidth;
   var height = container.clientHeight;
@@ -103,7 +100,7 @@ function initHeroScene(canvasId) {
 // ---------- Ambient background scene for inner pages: sparse floating particles ----------
 function initAmbientScene(canvasId) {
   var container = document.getElementById(canvasId);
-  if (!container || typeof THREE === 'undefined' || prefersReducedMotion) return;
+  if (!container || typeof THREE === 'undefined') return;
 
   var width = container.clientWidth;
   var height = container.clientHeight;
@@ -146,7 +143,63 @@ function initAmbientScene(canvasId) {
   });
 }
 
+// ---------- Scroll-reveal: fade cards & sections in as they enter the viewport ----------
+function initScrollReveal() {
+  var selectors = '.service-card, .process-step, .post-card, .team-card, .story-card, ' +
+    '.story-featured, .cta-band, .section-head, .contact-info-card, .contact-form, .newsletter-block';
+  var items = document.querySelectorAll(selectors);
+  if (!items.length) return;
+
+  // Applied via JS so content stays visible if JS never runs.
+  items.forEach(function (el) { el.classList.add('reveal'); });
+
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('in-view'); });
+    return;
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var el = entry.target;
+      // Stagger siblings that reveal together
+      var siblings = Array.prototype.filter.call(el.parentElement.children, function (c) {
+        return c.classList.contains('reveal');
+      });
+      var idx = siblings.indexOf(el);
+      el.style.transitionDelay = (idx > 0 ? Math.min(idx * 0.08, 0.4) : 0) + 's';
+      el.classList.add('in-view');
+      observer.unobserve(el);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  items.forEach(function (el) { observer.observe(el); });
+}
+
+// ---------- Hero stats: count-up ----------
+function initCounters() {
+  document.querySelectorAll('.hero-stat .num').forEach(function (el) {
+    var match = el.textContent.match(/^(\d+)(.*)$/);
+    if (!match) return;
+    var target = parseInt(match[1], 10);
+    var suffix = match[2];
+    if (target <= 1) return;
+    var start = null;
+    var duration = 1100;
+    function tick(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   initHeroScene('hero-canvas');
   initAmbientScene('ambient-canvas');
+  initScrollReveal();
+  initCounters();
 });
