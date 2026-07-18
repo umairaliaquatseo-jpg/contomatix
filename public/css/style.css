@@ -802,29 +802,60 @@ section { padding: 80px 0; }
 .site-footer {
   border-top: 1px solid var(--border);
   background: var(--bg-alt);
-  padding-top: 60px;
+  padding-top: 64px;
 }
 .footer-columns {
   display: grid;
-  grid-template-columns: repeat(3, 1fr) 1.4fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 32px;
-  padding-bottom: 40px;
+  padding-bottom: 52px;
 }
-.footer-col h4 { font-size: 0.85rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 16px; }
-.footer-col ul { display: grid; gap: 10px; }
+.footer-col h4 { font-size: 1rem; color: var(--text); margin-bottom: 18px; }
+.footer-col ul { display: grid; gap: 12px; }
 .footer-col a { color: var(--text-dim); font-size: 0.9rem; display: inline-block; transition: color 0.15s ease, transform 0.15s ease; }
 .footer-col a:hover { color: var(--accent-teal-bright); transform: translateX(3px); }
-.footer-brand { margin-bottom: 12px; }
-.footer-tagline { color: var(--text-faint); font-size: 0.85rem; max-width: 30ch; }
-.footer-bottom {
-  border-top: 1px solid var(--border);
-  padding: 20px 24px;
+
+.footer-mid {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-top: 34px;
+  padding-bottom: 30px;
+  border-top: 1px solid var(--border);
+}
+.footer-brand { margin-bottom: 14px; }
+.footer-legal { display: flex; align-items: center; color: var(--text-dim); font-size: 0.88rem; }
+.footer-legal a { padding: 0 16px; border-left: 1px solid var(--border-light); line-height: 1.2; }
+.footer-legal a:first-child { padding-left: 0; border-left: none; }
+.footer-legal a:hover { color: var(--accent-teal-bright); }
+
+.footer-social { display: flex; gap: 12px; }
+.footer-social a {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  transition: color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+.footer-social a:hover {
+  color: var(--accent-teal-bright);
+  border-color: rgba(45,212,191,0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px -8px rgba(45,212,191,0.4);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding: 22px 24px;
+  text-align: center;
   color: var(--text-faint);
   font-size: 0.82rem;
 }
-.footer-legal { display: flex; gap: 18px; }
+.footer-bottom p { margin: 0; }
 
 /* 404 */
 .page-404-inner { text-align: center; padding: 120px 0; }
