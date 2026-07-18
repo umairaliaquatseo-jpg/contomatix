@@ -44,8 +44,8 @@ function initHeroScene(canvasId) {
   var NODE_COUNT = 26;
   var nodes = [];
   var nodeGeo = new THREE.SphereGeometry(0.35, 12, 12);
-  var tealMat = new THREE.MeshBasicMaterial({ color: 0x2dd4bf });
-  var amberMat = new THREE.MeshBasicMaterial({ color: 0xf5a623 });
+  var tealMat = new THREE.MeshBasicMaterial({ color: 0x0ea5a0 });
+  var amberMat = new THREE.MeshBasicMaterial({ color: 0xf59e0b });
 
   for (var i = 0; i < NODE_COUNT; i++) {
     var mat = i % 4 === 0 ? amberMat : tealMat;
@@ -63,7 +63,7 @@ function initHeroScene(canvasId) {
   }
 
   // connecting lines between nearby nodes
-  var lineMat = new THREE.LineBasicMaterial({ color: 0x2e3b58, transparent: true, opacity: 0.6 });
+  var lineMat = new THREE.LineBasicMaterial({ color: 0xcdbfa9, transparent: true, opacity: 0.7 });
   for (var a = 0; a < nodes.length; a++) {
     for (var b = a + 1; b < nodes.length; b++) {
       if (nodes[a].position.distanceTo(nodes[b].position) < 9 && Math.random() > 0.75) {
@@ -123,7 +123,7 @@ function initAmbientScene(canvasId) {
   }
   var geo = new THREE.BufferGeometry();
   geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-  var mat = new THREE.PointsMaterial({ color: 0x2dd4bf, size: 0.18, transparent: true, opacity: 0.55 });
+  var mat = new THREE.PointsMaterial({ color: 0x0ea5a0, size: 0.18, transparent: true, opacity: 0.6 });
   var points = new THREE.Points(geo, mat);
   scene.add(points);
 
@@ -146,7 +146,8 @@ function initAmbientScene(canvasId) {
 // ---------- Scroll-reveal: fade cards & sections in as they enter the viewport ----------
 function initScrollReveal() {
   var selectors = '.service-card, .process-step, .post-card, .team-card, .story-card, ' +
-    '.story-featured, .cta-band, .section-head, .contact-info-card, .contact-form, .newsletter-block';
+    '.story-featured, .cta-band, .section-head, .contact-info-card, .contact-form, ' +
+    '.newsletter-block, .feature-copy, .feature-art';
   var items = document.querySelectorAll(selectors);
   if (!items.length) return;
 
