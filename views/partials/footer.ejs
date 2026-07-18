@@ -1,0 +1,48 @@
+<footer class="site-footer">
+  <div class="container footer-columns">
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <% services.forEach(function(s) { %>
+          <li><a href="/services/<%= s.slug %>"><%= s.title %></a></li>
+        <% }); %>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/about">About us</a></li>
+        <li><a href="/team">Team</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact">Support</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-col-brand">
+      <div class="brand footer-brand">
+        <span class="brand-mark" aria-hidden="true">
+          <%- include('./logo', { logoSize: 26 }) %>
+        </span>
+        <span class="brand-name">Contomatix</span>
+      </div>
+      <p class="footer-tagline">Link building &amp; SEO services that move rankings, not just numbers.</p>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>&copy; <%= new Date().getFullYear() %> Contomatix. All rights reserved.</p>
+    <div class="footer-legal">
+      <a href="/contact">Terms</a>
+      <a href="/contact">Privacy policy</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+</footer>

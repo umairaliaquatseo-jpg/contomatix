@@ -1,0 +1,39 @@
+<section class="page-hero">
+  <div id="ambient-canvas" class="ambient-canvas"></div>
+  <div class="container page-hero-inner">
+    <span class="eyebrow">Service</span>
+    <h1><%= service.title %></h1>
+    <p><%= service.summary %></p>
+  </div>
+</section>
+
+<section>
+  <div class="container service-detail-grid">
+    <div>
+      <h2>Overview</h2>
+      <p><%= service.description %></p>
+
+      <h2>What's included</h2>
+      <ul class="service-points">
+        <% service.points.forEach(function(pt) { %>
+          <li><%= pt %></li>
+        <% }); %>
+      </ul>
+
+      <div class="cta-band" style="margin-top:40px;">
+        <h2>Interested in <%= service.title %>?</h2>
+        <p>Get in touch and we'll walk you through how it fits your site.</p>
+        <a href="/contact" class="btn btn-primary">Get in touch</a>
+      </div>
+    </div>
+
+    <aside class="service-sidebar">
+      <h4>All services</h4>
+      <ul>
+        <% services.forEach(function(s) { %>
+          <li><a href="/services/<%= s.slug %>" class="<%= s.slug === service.slug ? 'active' : '' %>"><%= s.title %></a></li>
+        <% }); %>
+      </ul>
+    </aside>
+  </div>
+</section>

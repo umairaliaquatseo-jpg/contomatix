@@ -1,0 +1,152 @@
+require('dotenv').config();
+
+const express = require('express');
+const path = require('path');
+const expressLayouts = require('express-ejs-layouts');
+
+const services = require('./data/services');
+const blogPosts = require('./data/blog');
+const team = require('./data/team');
+const site = require('./data/site');
+const { sendContactEmail, smtpConfigured } = require('./lib/mailer');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// View engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.use(expressLayouts);
+app.set('layout', 'partials/layout');
+
+// Static assets
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Helper: pass common data to every view
+app.use((req, res, next) => {
+  res.locals.services = services;
+  res.locals.currentPath = req.path;
+  res.locals.siteName = 'Contomatix';
+  res.locals.site = site;
+  // Fallbacks so views that don't pass these (e.g. 404) still render.
+  res.locals.description = 'Contomatix — link building and SEO services.';
+  next();
+});
+
+// ---------- Routes ----------
+
+app.get('/', (req, res) => {
+  res.render('pages/home', {
+    title: 'Contomatix — Link Building & SEO Services',
+    description: 'Contomatix helps brands grow organic traffic through link building, guest posting, on-page & off-page SEO, and keyword research.',
+    pageClass: 'page-home',
+    recentPosts: blogPosts.slice(0, 3)
+  });
+});
+
+app.get('/services/:slug', (req, res) => {
+  const service = services.find(s => s.slug === req.params.slug);
+  if (!service) return res.status(404).render('pages/404', { title: 'Page not found', pageClass: 'page-404' });
+  res.render('pages/service', {
+    title: `${service.title} — Contomatix`,
+    description: service.summary,
+    pageClass: 'page-service',
+    service
+  });
+});
+
+app.get('/blog', (req, res) => {
+  const category = req.query.category || 'All';
+  const categories = ['All', ...new Set(blogPosts.map(p => p.category))];
+  const filtered = category === 'All' ? blogPosts : blogPosts.filter(p => p.category === category);
+  res.render('pages/blog', {
+    title: 'Blog — Contomatix',
+    description: 'SEO strategy, link building tactics, and content marketing insights from Contomatix.',
+    pageClass: 'page-blog',
+    posts: filtered,
+    categories,
+    activeCategory: category
+  });
+});
+
+app.get('/blog/:slug', (req, res) => {
+  const post = blogPosts.find(p => p.slug === req.params.slug);
+  if (!post) return res.status(404).render('pages/404', { title: 'Page not found', pageClass: 'page-404' });
+  res.render('pages/blog-post', {
+    title: `${post.title} — Contomatix Blog`,
+    description: post.excerpt,
+    pageClass: 'page-blog-post',
+    post
+  });
+});
+
+app.get('/team', (req, res) => {
+  res.render('pages/team', {
+    title: 'Our Team — Contomatix',
+    description: 'Meet the team behind Contomatix.',
+    pageClass: 'page-team',
+    team
+  });
+});
+
+app.get('/about', (req, res) => {
+  res.render('pages/about', {
+    title: 'About Us — Contomatix',
+    description: 'Learn what Contomatix does and how we help brands rank higher.',
+    pageClass: 'page-about'
+  });
+});
+
+app.get('/contact', (req, res) => {
+  res.render('pages/contact', {
+    title: 'Contact Us — Contomatix',
+    description: 'Get in touch with Contomatix for link building and SEO services.',
+    pageClass: 'page-contact',
+    submitted: false,
+    error: null,
+    form: {}
+  });
+});
+
+app.post('/contact', async (req, res) => {
+  const name = (req.body.name || '').trim();
+  const email = (req.body.email || '').trim();
+  const message = (req.body.message || '').trim();
+
+  const renderContact = (state) => res.render('pages/contact', {
+    title: 'Contact Us — Contomatix',
+    description: 'Get in touch with Contomatix for link building and SEO services.',
+    pageClass: 'page-contact',
+    submitted: false,
+    error: null,
+    form: { name, email, message },
+    ...state
+  });
+
+  if (!name || !email || !message) {
+    return renderContact({ error: 'Please fill in your name, email, and message.' });
+  }
+
+  try {
+    const result = await sendContactEmail({ name, email, message });
+    if (!result.sent) {
+      // SMTP not configured — keep the lead in the server log rather than losing it.
+      console.warn('[contact] SMTP not configured — submission logged only:', { name, email, message });
+    }
+    return renderContact({ submitted: true, form: {} });
+  } catch (err) {
+    console.error('[contact] Failed to send email:', err);
+    return renderContact({ error: 'Sorry — something went wrong sending your message. Please try again, or reach us on WhatsApp or email instead.' });
+  }
+});
+
+// 404
+app.use((req, res) => {
+  res.status(404).render('pages/404', { title: 'Page not found', pageClass: 'page-404' });
+});
+
+app.listen(PORT, () => {
+  console.log(`Contomatix site running at http://localhost:${PORT}`);
+});

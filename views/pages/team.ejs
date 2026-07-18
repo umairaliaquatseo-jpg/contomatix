@@ -1,0 +1,21 @@
+<section class="page-hero">
+  <div id="ambient-canvas" class="ambient-canvas"></div>
+  <div class="container page-hero-inner">
+    <span class="eyebrow">Team</span>
+    <h1>The people behind Contomatix</h1>
+    <p>A small, focused team working on link building, SEO, and content.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container team-grid">
+    <% team.forEach(function(member) { %>
+      <div class="team-card">
+        <div class="team-avatar"><%= member.name.split(' ').map(function(w){ return w[0]; }).join('') %></div>
+        <h3><%= member.name %></h3>
+        <div class="role"><%= member.role %></div>
+        <p class="bio"><%= member.bio %></p>
+      </div>
+    <% }); %>
+  </div>
+</section>

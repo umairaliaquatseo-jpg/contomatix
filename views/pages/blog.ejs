@@ -1,0 +1,84 @@
+<section class="blog-header">
+  <div class="container">
+    <h1>Contomatix blog</h1>
+    <p>SEO strategy, link building tactics, and content insights — from the Contomatix team.</p>
+  </div>
+</section>
+
+<div class="container blog-toolbar">
+  <div class="category-tabs">
+    <% categories.forEach(function(cat) { %>
+      <a class="category-tab <%= cat === activeCategory ? 'active' : '' %>" href="/blog?category=<%= encodeURIComponent(cat) %>"><%= cat %></a>
+    <% }); %>
+  </div>
+  <input class="search-box" type="search" placeholder="Search...">
+</div>
+
+<% if (posts.length) { %>
+<div class="container top-stories">
+  <a class="story-featured" href="/blog/<%= posts[0].slug %>">
+    <div class="story-image"></div>
+    <div class="story-body">
+      <span class="story-tag"><%= posts[0].category %></span>
+      <h3><%= posts[0].title %></h3>
+      <p><%= posts[0].excerpt %></p>
+    </div>
+  </a>
+  <div class="story-side">
+    <% posts.slice(1, 4).forEach(function(p) { %>
+      <a class="story-card" href="/blog/<%= p.slug %>">
+        <div class="story-thumb"></div>
+        <div>
+          <span class="story-tag"><%= p.category %></span>
+          <div class="story-date">Published on <%= p.date %></div>
+          <h3><%= p.title %></h3>
+        </div>
+      </a>
+    <% }); %>
+  </div>
+</div>
+<% } else { %>
+<div class="container">
+  <p style="color:var(--text-dim); padding: 40px 0;">No posts in this category yet — check back soon.</p>
+</div>
+<% } %>
+
+<div class="container">
+  <div class="newsletter-block">
+    <div>
+      <h2>Join our newsletter</h2>
+      <p>Get exclusive access to the latest SEO strategy, link building tactics, and product updates.</p>
+      <form class="newsletter-form" action="/contact" method="get">
+        <input type="email" placeholder="Your email" required>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+      <div class="newsletter-perks">
+        <span>&#10003; 0% spam, 100% value</span>
+        <span>&#10003; Proven strategies</span>
+        <span>&#10003; Unsubscribe anytime</span>
+      </div>
+    </div>
+    <div class="newsletter-visual"></div>
+  </div>
+</div>
+
+<% if (posts.length > 4) { %>
+<div class="container">
+  <div class="post-grid">
+    <% posts.slice(4).forEach(function(p) { %>
+      <a class="post-card" href="/blog/<%= p.slug %>">
+        <div class="post-image"></div>
+        <div class="post-body">
+          <span class="story-tag"><%= p.category %></span>
+          <h3><%= p.title %></h3>
+          <p><%= p.excerpt %></p>
+        </div>
+      </a>
+    <% }); %>
+  </div>
+</div>
+<% } %>
+
+<div class="pagination">
+  <span class="current">1</span>
+</div>

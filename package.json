@@ -1,0 +1,23 @@
+{
+  "name": "contomatix",
+  "version": "1.0.0",
+  "description": "Contomatix.com - SEO services website (link building, guest posting, on-page/off-page SEO, keyword research) with blog",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-ejs-layouts": "^2.5.1",
+    "nodemailer": "^9.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

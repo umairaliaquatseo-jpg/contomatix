@@ -1,0 +1,90 @@
+<section class="hero">
+  <div id="hero-canvas" class="hero-canvas"></div>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">SEO &amp; Link Building</span>
+      <h1>Rankings built on real authority, not shortcuts.</h1>
+      <p>Contomatix helps brands grow organic traffic through white-hat link building, guest posting, on-page &amp; off-page SEO, and keyword research that actually moves the needle.</p>
+      <div class="hero-actions">
+        <a href="/contact" class="btn btn-primary">Get a free audit</a>
+        <a href="/services/link-building" class="btn btn-outline">Explore services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="num">6</span><span class="label">Core services</span></div>
+        <div class="hero-stat"><span class="num">100%</span><span class="label">White-hat</span></div>
+        <div class="hero-stat"><span class="num">24/7</span><span class="label">Support</span></div>
+      </div>
+    </div>
+    <div class="hero-visual"></div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What we do</span>
+      <h2>Six services. One goal: rankings that hold.</h2>
+      <p>Every service is built to compound with the others — links, content, and structure working together.</p>
+    </div>
+    <div class="service-grid">
+      <% services.forEach(function(s) { %>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
+          </div>
+          <h3><%= s.title %></h3>
+          <p><%= s.summary %></p>
+          <a href="/services/<%= s.slug %>">Learn more &rarr;</a>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">How it works</span>
+      <h2>A simple, transparent process</h2>
+    </div>
+    <div class="process-list">
+      <div class="process-step"><span class="step-num">01</span><h4>Audit</h4><p>We review your site, backlink profile, and competitors.</p></div>
+      <div class="process-step"><span class="step-num">02</span><h4>Strategy</h4><p>A roadmap prioritized around the keywords and links that matter most.</p></div>
+      <div class="process-step"><span class="step-num">03</span><h4>Execution</h4><p>Outreach, content, and on-page work carried out and tracked.</p></div>
+      <div class="process-step"><span class="step-num">04</span><h4>Reporting</h4><p>Monthly reporting so you always know what's working.</p></div>
+    </div>
+  </div>
+</section>
+
+<% if (typeof recentPosts !== 'undefined' && recentPosts.length) { %>
+<section class="recent-posts">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">From the blog</span>
+      <h2>Latest insights</h2>
+    </div>
+    <div class="post-grid">
+      <% recentPosts.forEach(function(p) { %>
+        <a class="post-card" href="/blog/<%= p.slug %>">
+          <div class="post-image"></div>
+          <div class="post-body">
+            <span class="story-tag"><%= p.category %></span>
+            <h3><%= p.title %></h3>
+            <p><%= p.excerpt %></p>
+          </div>
+        </a>
+      <% }); %>
+    </div>
+  </div>
+</section>
+<% } %>
+
+<section class="cta">
+  <div class="container">
+    <div class="cta-band">
+      <h2>Ready to grow your rankings?</h2>
+      <p>Tell us about your site and goals — we'll put together a free audit and a plan tailored to your niche.</p>
+      <a href="/contact" class="btn btn-primary">Get in touch</a>
+    </div>
+  </div>
+</section>

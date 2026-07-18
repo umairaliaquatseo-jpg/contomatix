@@ -1,0 +1,57 @@
+<section class="page-hero">
+  <div id="ambient-canvas" class="ambient-canvas"></div>
+  <div class="container page-hero-inner">
+    <span class="eyebrow">Contact</span>
+    <h1>Let's talk about your site</h1>
+    <p>Send us a message or reach out on WhatsApp — we usually reply within a day.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container contact-grid">
+    <div>
+      <% if (typeof submitted !== 'undefined' && submitted) { %>
+        <div class="contact-success">Thanks — your message has been sent. We'll get back to you shortly.</div>
+      <% } %>
+      <% if (typeof error !== 'undefined' && error) { %>
+        <div class="contact-error" role="alert"><%= error %></div>
+      <% } %>
+      <form class="contact-form" method="POST" action="/contact">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required value="<%= (typeof form !== 'undefined' && form.name) || '' %>">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required value="<%= (typeof form !== 'undefined' && form.email) || '' %>">
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required><%= (typeof form !== 'undefined' && form.message) || '' %></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send message</button>
+      </form>
+    </div>
+
+    <div class="contact-info-card">
+      <div class="info-row">
+        <div>
+          <strong>WhatsApp</strong>
+          <a href="https://wa.me/<%= site.whatsappNumber %>" target="_blank" rel="noopener">Chat with us directly</a>
+        </div>
+      </div>
+      <div class="info-row">
+        <div>
+          <strong>Email</strong>
+          <a href="mailto:<%= site.contactEmail %>"><%= site.contactEmail %></a>
+        </div>
+      </div>
+      <div class="info-row">
+        <div>
+          <strong>Response time</strong>
+          <span>Usually within 24 hours</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
