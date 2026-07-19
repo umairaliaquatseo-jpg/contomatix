@@ -37,16 +37,42 @@
 </div>
 
 <section class="services">
+  <span class="deco-blob deco-blob-1" aria-hidden="true"></span>
+  <span class="deco-blob deco-blob-2" aria-hidden="true"></span>
   <div class="container">
     <div class="section-head centered">
       <span class="eyebrow">Full SEO strategy</span>
       <h2>One connected strategy — not one-off links</h2>
       <p>Six services that compound with each other: research finds the targets, content and links build the authority, on-page work makes it stick.</p>
     </div>
-    <div class="service-grid">
-      <% services.forEach(function(s, i) { %>
+
+    <!-- Featured: Link Building -->
+    <div class="service-featured">
+      <div class="sf-copy">
+        <span class="sf-badge">★ Flagship service</span>
+        <h3>Link <span class="grad-text">Building</span></h3>
+        <p class="sf-lead">The engine behind every ranking we move. We earn editorial backlinks from real, traffic-verified sites in your niche — the kind of authority Google can't ignore and competitors can't copy.</p>
+        <ul class="sf-points">
+          <li>Manual outreach to DR 50+ publishers with real organic traffic</li>
+          <li>Anchor text mapped to your keyword strategy, never spammy</li>
+          <li>Every site vetted for relevance, traffic, and link history</li>
+          <li>Live link sheet + monthly velocity reports — full transparency</li>
+        </ul>
+        <div class="sf-actions">
+          <a href="/services/link-building" class="btn btn-primary">Explore Link Building &rarr;</a>
+          <a href="/contact" class="btn btn-glass">Get a free audit</a>
+        </div>
+      </div>
+      <div class="sf-media">
+        <img src="/images/illus-links.svg" alt="Network of high-authority sites linking to your site" width="760" height="560">
+        <span class="sf-chip">🔗 +38 links this quarter</span>
+      </div>
+    </div>
+
+    <div class="service-grid service-grid-5">
+      <% services.filter(function(s) { return s.slug !== 'link-building'; }).forEach(function(s, i) { %>
         <div class="service-card">
-          <span class="service-num">0<%= i + 1 %></span>
+          <span class="service-num">0<%= i + 2 %></span>
           <div class="service-icon">
             <%- include('../partials/icons', { icon: s.icon }) %>
           </div>

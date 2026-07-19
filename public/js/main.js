@@ -171,7 +171,71 @@ function initAmbientScene(canvasId) {
   });
 }
 
-// ---------- Scroll-reveal: fade cards & sections in as they enter the viewport ----------
+// ---------- GSAP scroll animations (seomatrix-style) ----------
+function initGsapScroll() {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return false;
+  gsap.registerPlugin(ScrollTrigger);
+
+  var ease = 'power3.out';
+
+  // Section heads: fade up
+  gsap.utils.toArray('.section-head').forEach(function (el) {
+    gsap.from(el, {
+      y: 34, opacity: 0, duration: 0.55, ease: ease,
+      scrollTrigger: { trigger: el, start: 'top 88%' }
+    });
+  });
+
+  // Cards: staggered rise (batched per grid)
+  gsap.utils.toArray('.service-grid, .process-list, .post-grid, .team-grid, .faq-list').forEach(function (grid) {
+    var items = grid.children;
+    if (!items.length) return;
+    gsap.from(items, {
+      y: 44, opacity: 0, duration: 0.5, ease: ease, stagger: 0.07,
+      scrollTrigger: { trigger: grid, start: 'top 86%' }
+    });
+  });
+
+  // Feature rows: media and copy slide in from opposite sides (left50To0 / right50To0)
+  gsap.utils.toArray('.feature-row').forEach(function (row) {
+    var media = row.querySelector('.feature-media');
+    var copy = row.querySelector('div:not(.feature-media)');
+    var flip = row.classList.contains('flip');
+    if (media) gsap.from(media, {
+      x: flip ? 70 : -70, opacity: 0, duration: 0.65, ease: ease,
+      scrollTrigger: { trigger: row, start: 'top 82%' }
+    });
+    if (copy) gsap.from(copy, {
+      x: flip ? -70 : 70, opacity: 0, duration: 0.65, ease: ease, delay: 0.08,
+      scrollTrigger: { trigger: row, start: 'top 82%' }
+    });
+  });
+
+  // Featured service: copy from left, media from right
+  var sf = document.querySelector('.service-featured');
+  if (sf) {
+    gsap.from(sf.querySelector('.sf-copy'), {
+      x: -60, opacity: 0, duration: 0.65, ease: ease,
+      scrollTrigger: { trigger: sf, start: 'top 82%' }
+    });
+    gsap.from(sf.querySelector('.sf-media'), {
+      x: 60, opacity: 0, duration: 0.65, ease: ease, delay: 0.1,
+      scrollTrigger: { trigger: sf, start: 'top 82%' }
+    });
+  }
+
+  // Big panels: subtle scale-in
+  gsap.utils.toArray('.stats-band .stats-grid, .cta-band, .compare, .video-panel, .newsletter-block').forEach(function (el) {
+    gsap.from(el, {
+      y: 40, scale: 0.965, opacity: 0, duration: 0.6, ease: ease,
+      scrollTrigger: { trigger: el, start: 'top 86%' }
+    });
+  });
+
+  return true;
+}
+
+// ---------- Scroll-reveal fallback (no GSAP): fade cards in as they enter the viewport ----------
 function initScrollReveal() {
   var selectors = '.service-card, .process-step, .post-card, .team-card, .story-card, ' +
     '.story-featured, .cta-band, .section-head, .contact-info-card, .contact-form, ' +
@@ -350,7 +414,7 @@ function initCompare() {
 document.addEventListener('DOMContentLoaded', function () {
   initHeroScene('hero-canvas');
   initAmbientScene('ambient-canvas');
-  initScrollReveal();
+  if (!initGsapScroll()) initScrollReveal();
   initCounters();
   initHoverGlow();
   initTilt();
