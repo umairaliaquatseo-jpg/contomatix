@@ -211,18 +211,18 @@ function initGsapScroll() {
     });
   });
 
-  // Featured service: copy from left, media from right
-  var sf = document.querySelector('.service-featured');
-  if (sf) {
-    gsap.from(sf.querySelector('.sf-copy'), {
-      x: -60, opacity: 0, duration: 0.65, ease: ease,
-      scrollTrigger: { trigger: sf, start: 'top 82%' }
+  // Service rows: copy and media slide in from opposite sides, alternating
+  gsap.utils.toArray('.service-row').forEach(function (row) {
+    var flip = row.classList.contains('flip');
+    gsap.from(row.querySelector('.sr-copy'), {
+      x: flip ? 70 : -70, opacity: 0, duration: 0.6, ease: ease,
+      scrollTrigger: { trigger: row, start: 'top 82%' }
     });
-    gsap.from(sf.querySelector('.sf-media'), {
-      x: 60, opacity: 0, duration: 0.65, ease: ease, delay: 0.1,
-      scrollTrigger: { trigger: sf, start: 'top 82%' }
+    gsap.from(row.querySelector('.sr-media'), {
+      x: flip ? -70 : 70, opacity: 0, duration: 0.6, ease: ease, delay: 0.08,
+      scrollTrigger: { trigger: row, start: 'top 82%' }
     });
-  }
+  });
 
   // Big panels: subtle scale-in
   gsap.utils.toArray('.stats-band .stats-grid, .cta-band, .compare, .video-panel, .newsletter-block').forEach(function (el) {

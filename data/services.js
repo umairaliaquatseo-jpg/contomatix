@@ -10,6 +10,11 @@ module.exports = [
       'Niche-relevant anchor text strategy',
       'Monthly link velocity reports',
       'White-hat, Google guideline compliant'
+    ],
+    faqs: [
+      { q: 'How many links do I need per month?', a: 'It depends on your niche and competition. After the free audit we recommend a monthly link velocity based on what the top-ranking competitors have — usually somewhere between 4 and 20 quality links a month.' },
+      { q: 'What makes a link "high quality"?', a: 'A real site with real organic traffic, topical relevance to your niche, a clean outbound-link history, and an editorial placement inside content — not a sidebar or footer. We check all four before any placement.' },
+      { q: 'Do you use PBNs or link farms?', a: 'Never. Every placement is on an independently owned site we reach through manual outreach. You see the full site list with metrics before anything goes live.' }
     ]
   },
   {
@@ -23,6 +28,11 @@ module.exports = [
       'Contextual, relevant surrounding copy',
       'Faster time-to-index than fresh guest posts',
       'Detailed placement reporting'
+    ],
+    faqs: [
+      { q: 'How is link insertion different from guest posting?', a: 'A guest post is a brand-new article that has to be indexed and earn authority from scratch. A link insertion goes into a page that already ranks and already has authority — so the equity passes to your site much faster.' },
+      { q: 'How fast do inserted links get indexed?', a: 'Because the host page is already in Google\'s index, most insertions are re-crawled within days. We typically see them picked up within one to two weeks.' },
+      { q: 'Can I choose which articles my links go into?', a: 'Yes — you get the candidate URLs with traffic and ranking data before placement, and nothing goes live without your approval.' }
     ]
   },
   {
@@ -36,6 +46,11 @@ module.exports = [
       'Original content written for each site',
       'Editorial review before publishing',
       'Referral traffic + link equity'
+    ],
+    faqs: [
+      { q: 'Who writes the guest articles?', a: 'Our writers do — each article is original, written for the host site\'s audience, and reviewed by their editors. You can review drafts before they are submitted if you prefer.' },
+      { q: 'Will the articles mention my brand?', a: 'Yes, naturally. The article provides genuine value on a topic in your niche, with your link and brand woven in as a relevant reference — not an advertorial.' },
+      { q: 'Do guest posts still work for SEO?', a: 'Quality ones do. What stopped working is mass-produced spam on fake blogs. Placements on real publications with real readers remain one of the strongest white-hat signals available.' }
     ]
   },
   {
@@ -49,6 +64,11 @@ module.exports = [
       'Content & keyword mapping',
       'Internal linking structure',
       'Technical on-page audit & fixes'
+    ],
+    faqs: [
+      { q: 'What does an on-page audit cover?', a: 'Titles, metas, header structure, content depth against ranking competitors, internal links, image optimization, schema, indexability, and page speed basics — delivered as a prioritized fix list, not a 90-page PDF.' },
+      { q: 'Do you implement the fixes or just report them?', a: 'Either. We can hand your developers a clear task list, or implement the changes directly if we have access to your CMS.' },
+      { q: 'How soon do on-page changes show results?', a: 'On-page fixes are usually the fastest wins in SEO — improvements often show within a few weeks of re-crawling, especially for pages already ranking on page 2-3.' }
     ]
   },
   {
@@ -62,6 +82,11 @@ module.exports = [
       'Brand mentions & citations',
       'Competitor backlink gap analysis',
       'Ongoing authority monitoring'
+    ],
+    faqs: [
+      { q: 'Is off-page SEO just link building?', a: 'Links are the biggest part, but not the whole picture. Brand mentions, citations, reviews, and digital PR all feed the authority and trust signals search engines use.' },
+      { q: 'What is a backlink gap analysis?', a: 'We compare your backlink profile against the competitors outranking you, find the sites linking to them but not to you, and target the ones worth winning first.' },
+      { q: 'How do you track off-page progress?', a: 'Monthly reporting on referring domains, domain rating, share of voice for target keywords, and every new placement — all in a live sheet you can open any time.' }
     ]
   },
   {
@@ -75,6 +100,11 @@ module.exports = [
       'Competitor keyword gap research',
       'Prioritized keyword roadmap',
       'Ongoing tracking & refinement'
+    ],
+    faqs: [
+      { q: 'What do I actually receive?', a: 'A prioritized keyword roadmap: each keyword with volume, difficulty, intent, the page it should map to, and the order we recommend attacking them — ready to hand to writers or use for link targets.' },
+      { q: 'How do you decide which keywords to prioritize?', a: 'A mix of search volume, ranking difficulty against your current authority, buying intent, and content gaps competitors have missed. Realistic wins first, ambitious head terms as authority grows.' },
+      { q: 'Is this a one-time deliverable or ongoing?', a: 'Both work. Most clients start with a full roadmap and then refresh quarterly as rankings move and new opportunities appear.' }
     ]
   }
 ];

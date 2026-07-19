@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 560" font-family="Inter, -apple-system, sans-serif">
+  <style>
+    .tick { opacity: 0; animation: tick 5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .t2 { animation-delay: 0.7s; } .t3 { animation-delay: 1.4s; } .t4 { animation-delay: 2.1s; }
+    .bob { animation: bob 4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes tick { 0%,8% { opacity: 0; transform: scale(0.6); } 18%,85% { opacity: 1; transform: scale(1); } 95%,100% { opacity: 0; } }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+  </style>
+  <rect width="760" height="560" fill="#FDFAF5"/>
+
+  <rect x="100" y="60" width="560" height="440" rx="18" fill="#FFFFFF" stroke="#EAE0D2"/>
+  <rect x="100" y="60" width="560" height="44" rx="18" fill="#F7F2EA"/>
+  <circle cx="128" cy="82" r="5" fill="#F87171"/><circle cx="146" cy="82" r="5" fill="#FBBF24"/><circle cx="164" cy="82" r="5" fill="#34D399"/>
+
+  <!-- title tag row -->
+  <rect x="136" y="132" width="380" height="34" rx="10" fill="#F3ECE1"/>
+  <text x="152" y="154" font-size="12.5" font-family="JetBrains Mono, monospace" fill="#565E6E">&lt;title&gt; Optimized &amp; keyword-mapped</text>
+  <g class="tick"><circle cx="560" cy="149" r="14" fill="#E5F7F1"/><path d="M553 149l5 5 9-9" stroke="#0B807C" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+
+  <!-- meta row -->
+  <rect x="136" y="182" width="330" height="34" rx="10" fill="#F3ECE1"/>
+  <text x="152" y="204" font-size="12.5" font-family="JetBrains Mono, monospace" fill="#565E6E">&lt;meta&gt; Compelling description</text>
+  <g class="tick t2"><circle cx="560" cy="199" r="14" fill="#E5F7F1"/><path d="M553 199l5 5 9-9" stroke="#0B807C" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+
+  <!-- h1 row -->
+  <rect x="136" y="232" width="290" height="34" rx="10" fill="#F3ECE1"/>
+  <text x="152" y="254" font-size="12.5" font-family="JetBrains Mono, monospace" fill="#565E6E">&lt;h1&gt; One clear heading</text>
+  <g class="tick t3"><circle cx="560" cy="249" r="14" fill="#E5F7F1"/><path d="M553 249l5 5 9-9" stroke="#0B807C" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+
+  <!-- internal links row -->
+  <rect x="136" y="282" width="352" height="34" rx="10" fill="#F3ECE1"/>
+  <text x="152" y="304" font-size="12.5" font-family="JetBrains Mono, monospace" fill="#565E6E">Internal links → money pages</text>
+  <g class="tick t4"><circle cx="560" cy="299" r="14" fill="#E5F7F1"/><path d="M553 299l5 5 9-9" stroke="#0B807C" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+
+  <!-- content blocks -->
+  <g fill="#F0EAE0">
+    <rect x="136" y="342" width="488" height="10" rx="5"/>
+    <rect x="136" y="366" width="450" height="10" rx="5"/>
+    <rect x="136" y="390" width="470" height="10" rx="5"/>
+  </g>
+
+  <!-- score chip -->
+  <g class="bob">
+    <rect x="136" y="424" width="200" height="52" rx="26" fill="#16192A"/>
+    <text x="160" y="456" font-size="13.5" font-weight="700" fill="#5EEAD4">SEO score 96/100</text>
+  </g>
+</svg>

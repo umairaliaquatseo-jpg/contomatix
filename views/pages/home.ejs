@@ -46,84 +46,42 @@
       <p>Six services that compound with each other: research finds the targets, content and links build the authority, on-page work makes it stick.</p>
     </div>
 
-    <!-- Featured: Link Building -->
-    <div class="service-featured">
-      <div class="sf-copy">
-        <span class="sf-badge">★ Flagship service</span>
-        <h3>Link <span class="grad-text">Building</span></h3>
-        <p class="sf-lead">The engine behind every ranking we move. We earn editorial backlinks from real, traffic-verified sites in your niche — the kind of authority Google can't ignore and competitors can't copy.</p>
-        <ul class="sf-points">
-          <li>Manual outreach to DR 50+ publishers with real organic traffic</li>
-          <li>Anchor text mapped to your keyword strategy, never spammy</li>
-          <li>Every site vetted for relevance, traffic, and link history</li>
-          <li>Live link sheet + monthly velocity reports — full transparency</li>
-        </ul>
-        <div class="sf-actions">
-          <a href="/services/link-building" class="btn btn-primary">Explore Link Building &rarr;</a>
-          <a href="/contact" class="btn btn-glass">Get a free audit</a>
-        </div>
-      </div>
-      <div class="sf-media">
-        <img src="/images/illus-links.svg" alt="Network of high-authority sites linking to your site" width="760" height="560">
-        <span class="sf-chip">🔗 +38 links this quarter</span>
-      </div>
-    </div>
-
-    <div class="service-grid service-grid-5">
-      <% services.filter(function(s) { return s.slug !== 'link-building'; }).forEach(function(s, i) { %>
-        <div class="service-card">
-          <span class="service-num">0<%= i + 2 %></span>
-          <div class="service-icon">
-            <%- include('../partials/icons', { icon: s.icon }) %>
+    <%
+    var serviceArt = {
+      'link-building':    { img: '/images/illus-links.svg',     chip: '🔗 +38 links this quarter' },
+      'link-insertion':   { img: '/images/illus-insertion.svg', chip: '⚡ Indexed in days, not months' },
+      'guest-posting':    { img: '/images/illus-guestpost.svg', chip: '✍️ Original, editor-approved' },
+      'on-page-seo':      { img: '/images/illus-onpage.svg',    chip: '✅ SEO score 96/100' },
+      'off-page-seo':     { img: '/images/illus-offpage.svg',   chip: '🌍 Authority beyond your site' },
+      'keyword-research': { img: '/images/illus-keyword.svg',   chip: '🎯 40+ keyword gaps found' }
+    };
+    %>
+    <div class="service-rows">
+      <% services.forEach(function(s, i) { %>
+        <div class="service-row <%= i % 2 === 1 ? 'flip' : '' %>">
+          <div class="sr-copy">
+            <span class="sr-badge"><span class="sr-num">0<%= i + 1 %></span> <%= i === 0 ? '★ Flagship service' : 'Core service' %></span>
+            <h3><%
+              var words = s.title.split(' ');
+              var last = words.pop();
+            %><%= words.join(' ') %> <span class="grad-text"><%= last %></span></h3>
+            <p class="sr-lead"><%= s.description %></p>
+            <ul class="sr-points">
+              <% s.points.forEach(function(pt) { %>
+                <li><%= pt %></li>
+              <% }); %>
+            </ul>
+            <div class="sr-actions">
+              <a href="/services/<%= s.slug %>" class="btn btn-primary">Explore <%= s.title %> &rarr;</a>
+              <a href="/contact" class="btn btn-outline">Get a free audit</a>
+            </div>
           </div>
-          <h3><%= s.title %></h3>
-          <p><%= s.summary %></p>
-          <ul class="card-points">
-            <% s.points.slice(0, 3).forEach(function(pt) { %>
-              <li><%= pt %></li>
-            <% }); %>
-          </ul>
-          <a href="/services/<%= s.slug %>">Learn more &rarr;</a>
+          <div class="sr-media">
+            <img src="<%= serviceArt[s.slug].img %>" alt="<%= s.title %> illustration" width="760" height="560" loading="lazy">
+            <span class="sr-chip"><%= serviceArt[s.slug].chip %></span>
+          </div>
         </div>
       <% }); %>
-    </div>
-  </div>
-</section>
-
-<section class="features">
-  <div class="container">
-    <div class="feature-row">
-      <div class="feature-media">
-        <img src="/images/illus-links.svg" alt="Network of high-authority websites linking to your site" width="760" height="560">
-      </div>
-      <div>
-        <span class="eyebrow">Link building</span>
-        <h3>Links from real sites, with real traffic</h3>
-        <p>No link farms, no PBNs. We earn placements on genuine, relevant sites through outreach, guest posts, and niche edits — links search engines actually trust.</p>
-        <ul class="feature-list">
-          <li>Manual outreach to vetted publishers</li>
-          <li>DR and traffic checked before every placement</li>
-          <li>Anchor text planned around your keyword map</li>
-        </ul>
-        <a href="/services/link-building" class="btn btn-outline">How we build links &rarr;</a>
-      </div>
-    </div>
-
-    <div class="feature-row flip">
-      <div class="feature-media">
-        <img src="/images/illus-report.svg" alt="Monthly SEO report with growing traffic and goal completions" width="760" height="560">
-      </div>
-      <div>
-        <span class="eyebrow">Reporting</span>
-        <h3>Know exactly what you're paying for</h3>
-        <p>Every month you get a plain-English report: the links we built, the keywords that moved, and what's planned next. No smoke, no vanity metrics.</p>
-        <ul class="feature-list">
-          <li>Live link sheet you can check any time</li>
-          <li>Keyword movement tracked against targets</li>
-          <li>Clear next-month roadmap in every report</li>
-        </ul>
-        <a href="/contact" class="btn btn-outline">Get a sample report &rarr;</a>
-      </div>
     </div>
   </div>
 </section>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 560" font-family="Inter, -apple-system, sans-serif">
+  <style>
+    .bob { animation: bob 3.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .bob2 { animation: bob 4.4s ease-in-out 0.9s infinite; transform-box: fill-box; transform-origin: center; }
+    .write { stroke-dasharray: 1; stroke-dashoffset: 1; animation: write 5s ease-in-out infinite; }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    @keyframes write { 0%,15% { stroke-dashoffset: 1; } 60%,90% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 0; } }
+  </style>
+  <rect width="760" height="560" fill="#FDFAF5"/>
+
+  <!-- article -->
+  <rect x="110" y="66" width="540" height="430" rx="18" fill="#FFFFFF" stroke="#EAE0D2"/>
+  <text x="146" y="118" font-size="13" font-weight="700" fill="#8B93A3">growthblog.io / guest-article</text>
+  <rect x="536" y="98" width="88" height="28" rx="14" fill="#E5F7F1"/>
+  <text x="551" y="117" font-size="12" font-weight="700" fill="#0B807C">Published</text>
+
+  <rect x="146" y="150" width="440" height="20" rx="10" fill="#E9E2D6"/>
+  <rect x="146" y="182" width="300" height="20" rx="10" fill="#E9E2D6"/>
+
+  <!-- author row -->
+  <circle cx="166" cy="242" r="17" fill="#0EA5A0"/>
+  <circle cx="166" cy="236" r="6" fill="#FFFFFF" opacity="0.9"/>
+  <path d="M154 252 a12 8 0 0 1 24 0" fill="#FFFFFF" opacity="0.9"/>
+  <text x="194" y="238" font-size="13" font-weight="700" fill="#16192A">Contomatix Writer</text>
+  <text x="194" y="256" font-size="11.5" fill="#8B93A3">Industry expert · 1,400 words</text>
+
+  <g fill="#F0EAE0">
+    <rect x="146" y="292" width="468" height="10" rx="5"/>
+    <rect x="146" y="316" width="440" height="10" rx="5"/>
+    <rect x="146" y="340" width="456" height="10" rx="5"/>
+    <rect x="146" y="364" width="300" height="10" rx="5"/>
+    <rect x="146" y="404" width="468" height="10" rx="5"/>
+    <rect x="146" y="428" width="410" height="10" rx="5"/>
+  </g>
+  <rect x="318" y="362" width="126" height="14" rx="7" fill="#0EA5A0"/>
+
+  <!-- pen writing -->
+  <g class="bob">
+    <path class="write" pathLength="1" d="M480 200 C 520 190, 560 196, 600 188" stroke="#F59E0B" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M598 174l16 10-8 12-14-8z" fill="#F59E0B"/>
+    <path d="M612 182l6 4-4 6z" fill="#16192A"/>
+  </g>
+
+  <g class="bob2">
+    <rect x="52" y="452" width="238" height="48" rx="24" fill="#FFFFFF" stroke="#EAE0D2"/>
+    <text x="76" y="481" font-size="12.5" font-weight="700" fill="#16192A">✍️ Original, editor-approved</text>
+  </g>
+</svg>

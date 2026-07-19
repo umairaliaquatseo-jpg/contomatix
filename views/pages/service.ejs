@@ -35,6 +35,18 @@
       <p style="color: var(--text-dim);">Drag the slider to compare a typical site before and after a sustained campaign.</p>
       <%- include('../partials/compare') %>
 
+      <% if (service.faqs && service.faqs.length) { %>
+        <h2 style="margin-top: 1.8em;"><%= service.title %> FAQs</h2>
+        <div class="faq-list" style="margin-top: 22px;">
+          <% service.faqs.forEach(function(f) { %>
+            <details>
+              <summary><%= f.q %><span class="faq-icon"></span></summary>
+              <p><%= f.a %></p>
+            </details>
+          <% }); %>
+        </div>
+      <% } %>
+
       <div class="cta-band" style="margin-top: 44px;">
         <span class="cta-orb cta-orb-1"></span>
         <span class="cta-orb cta-orb-2"></span>
