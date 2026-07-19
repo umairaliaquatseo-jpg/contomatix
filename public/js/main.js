@@ -175,7 +175,7 @@ function initAmbientScene(canvasId) {
 function initScrollReveal() {
   var selectors = '.service-card, .process-step, .post-card, .team-card, .story-card, ' +
     '.story-featured, .cta-band, .section-head, .contact-info-card, .contact-form, ' +
-    '.newsletter-block, .feature-row, .testimonial-card, .faq-list details';
+    '.newsletter-block, .feature-row, .faq-list details, .stats-band .stats-grid';
   var items = document.querySelectorAll(selectors);
   if (!items.length) return;
 
@@ -224,6 +224,51 @@ function initCounters() {
     }
     requestAnimationFrame(tick);
   });
+}
+
+// ---------- Video panel: 30s synced progress + time ----------
+function initVideoPanels() {
+  document.querySelectorAll('.video-panel').forEach(function (panel) {
+    var fill = panel.querySelector('.vc-progress-fill');
+    var time = panel.querySelector('.vc-time');
+    if (!fill || !time) return;
+    var DURATION = 30;
+    var start = performance.now();
+    function fmt(s) { return '0:' + String(Math.floor(s)).padStart(2, '0'); }
+    function tick(now) {
+      var t = ((now - start) / 1000) % DURATION;
+      fill.style.width = (2 + (t / DURATION) * 96).toFixed(1) + '%';
+      time.textContent = fmt(t) + ' / ' + fmt(DURATION);
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  });
+}
+
+// ---------- Big stat counters (count up when scrolled into view) ----------
+function initBigCounters() {
+  var nums = document.querySelectorAll('[data-count]');
+  if (!nums.length) return;
+  function run(el) {
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    var start = null;
+    var duration = 1400;
+    function tick(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased).toLocaleString();
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  if (!('IntersectionObserver' in window)) { nums.forEach(run); return; }
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { run(entry.target); obs.unobserve(entry.target); }
+    });
+  }, { threshold: 0.5 });
+  nums.forEach(function (el) { obs.observe(el); });
 }
 
 // ---------- Cursor-follow glow on cards (theme hover animation) ----------
@@ -310,4 +355,6 @@ document.addEventListener('DOMContentLoaded', function () {
   initHoverGlow();
   initTilt();
   initCompare();
+  initVideoPanels();
+  initBigCounters();
 });

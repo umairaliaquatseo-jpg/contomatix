@@ -7,6 +7,7 @@ const expressLayouts = require('express-ejs-layouts');
 const services = require('./data/services');
 const blogPosts = require('./data/blog');
 const team = require('./data/team');
+const reviews = require('./data/reviews');
 const site = require('./data/site');
 const { sendContactEmail, smtpConfigured } = require('./lib/mailer');
 
@@ -41,7 +42,8 @@ app.get('/', (req, res) => {
   res.render('pages/home', {
     title: 'Contomatix — Link Building & SEO Services',
     description: 'Contomatix helps brands grow organic traffic through link building, guest posting, on-page & off-page SEO, and keyword research.',
-    pageClass: 'page-home'
+    pageClass: 'page-home',
+    reviews
   });
 });
 

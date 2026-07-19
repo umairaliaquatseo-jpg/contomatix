@@ -170,29 +170,29 @@ h1, h2, h3, h4 {
 }
 .hero-center > * {
   opacity: 0;
-  animation: fadeUp 0.7s cubic-bezier(0.22, 0.9, 0.35, 1) forwards;
+  animation: fadeUp 0.45s cubic-bezier(0.22, 0.9, 0.35, 1) forwards;
 }
-.hero-center > *:nth-child(1) { animation-delay: 0.05s; }
-.hero-center > *:nth-child(2) { animation-delay: 0.15s; }
-.hero-center > *:nth-child(3) { animation-delay: 0.28s; }
-.hero-center > *:nth-child(4) { animation-delay: 0.4s; }
-.hero-center > *:nth-child(5) { animation-delay: 0.52s; }
+.hero-center > *:nth-child(1) { animation-delay: 0.02s; }
+.hero-center > *:nth-child(2) { animation-delay: 0.08s; }
+.hero-center > *:nth-child(3) { animation-delay: 0.15s; }
+.hero-center > *:nth-child(4) { animation-delay: 0.22s; }
+.hero-center > *:nth-child(5) { animation-delay: 0.3s; }
 .hero-shot {
   opacity: 0;
-  animation: fadeUp 0.8s cubic-bezier(0.22, 0.9, 0.35, 1) 0.55s forwards;
+  animation: fadeUp 0.5s cubic-bezier(0.22, 0.9, 0.35, 1) 0.32s forwards;
 }
 
 .page-hero-inner > * {
   opacity: 0;
-  animation: fadeUp 0.6s cubic-bezier(0.22, 0.9, 0.35, 1) forwards;
+  animation: fadeUp 0.4s cubic-bezier(0.22, 0.9, 0.35, 1) forwards;
 }
-.page-hero-inner > *:nth-child(2) { animation-delay: 0.1s; }
-.page-hero-inner > *:nth-child(3) { animation-delay: 0.2s; }
+.page-hero-inner > *:nth-child(2) { animation-delay: 0.06s; }
+.page-hero-inner > *:nth-child(3) { animation-delay: 0.12s; }
 
 .reveal {
   opacity: 0;
-  transform: translateY(26px);
-  transition: opacity 0.6s ease, transform 0.65s cubic-bezier(0.22, 0.9, 0.35, 1);
+  transform: translateY(22px);
+  transition: opacity 0.38s ease, transform 0.42s cubic-bezier(0.22, 0.9, 0.35, 1);
 }
 .reveal.in-view { opacity: 1; transform: none; }
 
@@ -494,7 +494,7 @@ h1, h2, h3, h4 {
   gap: 38px;
   white-space: nowrap;
   padding-right: 38px;
-  animation: marquee 26s linear infinite;
+  animation: marquee 18s linear infinite;
 }
 .marquee-track span {
   font-family: var(--font-display);
@@ -527,13 +527,25 @@ section { padding: 84px 0; }
 }
 .service-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 30px 28px;
   overflow: hidden;
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
+.service-num {
+  position: absolute;
+  top: 24px; right: 26px;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--border-light);
+  letter-spacing: 0.04em;
+}
+.service-card:hover .service-num { color: var(--accent-teal); }
 .service-card::before {
   content: '';
   position: absolute;
@@ -565,7 +577,8 @@ section { padding: 84px 0; }
 .service-card p { color: var(--text-dim); font-size: 0.92rem; margin-bottom: 16px; }
 .service-card a { color: var(--accent-orange); font-size: 0.88rem; font-weight: 600; transition: gap 0.2s ease; display: inline-flex; gap: 5px; }
 .service-card a:hover { gap: 9px; }
-.card-points { display: grid; gap: 8px; margin: 0 0 18px; padding-top: 4px; }
+.card-points { display: grid; gap: 8px; margin: 0 0 18px; padding-top: 4px; flex: 1; align-content: start; }
+.service-card > a { margin-top: auto; }
 .card-points li {
   display: flex;
   gap: 8px;
@@ -703,12 +716,10 @@ section { padding: 84px 0; }
 .vc-progress-fill {
   display: block;
   height: 100%;
-  width: 40%;
+  width: 2%;
   border-radius: 999px;
   background: var(--gradient-brand);
-  animation: vcProgress 6s linear infinite;
 }
-@keyframes vcProgress { from { width: 4%; } to { width: 96%; } }
 .vc-time { color: #7A8299; font-size: 0.75rem; font-family: var(--font-mono); }
 
 /* Before/after comparison slider */
@@ -773,20 +784,58 @@ section { padding: 84px 0; }
 .compare-tag-l { left: 14px; background: rgba(22,25,42,0.72); color: #FFF; }
 .compare-tag-r { right: 14px; background: rgba(14,165,160,0.9); color: #FFF; }
 
-/* Testimonials */
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+/* Stats band (seomatrix-style counters) */
+.stats-band {
+  padding: 0;
 }
+.stats-band .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  background:
+    radial-gradient(480px 220px at 12% -40px, rgba(94,234,212,0.12), transparent 70%),
+    radial-gradient(480px 220px at 88% 140%, rgba(249,115,22,0.12), transparent 70%),
+    var(--dark);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-lg);
+  padding: 46px 40px;
+}
+.stat-big { text-align: center; color: #FFFFFF; }
+.stat-big .num, .stat-big .suffix {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 3.6vw, 2.9rem);
+  background: linear-gradient(105deg, #5EEAD4, #2DD4BF 55%, #FBBF24 115%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.stat-big label { display: block; margin-top: 4px; color: rgba(255,255,255,0.6); font-size: 0.88rem; }
+
+/* Testimonials — two auto-scrolling rows */
+.review-marquee {
+  overflow: hidden;
+  padding: 12px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+.review-track {
+  display: inline-flex;
+  gap: 20px;
+  padding-right: 20px;
+  animation: marquee 42s linear infinite;
+}
+.review-track-rev { animation-direction: reverse; }
+.review-marquee:hover .review-track { animation-play-state: paused; }
+.review-track .testimonial-card { width: 370px; flex-shrink: 0; }
 .testimonial-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 28px;
+  padding: 26px;
   display: flex;
   flex-direction: column;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 .testimonial-card:hover {
   transform: translateY(-4px);
@@ -1109,6 +1158,7 @@ details[open] .faq-icon::before, details[open] .faq-icon::after { background: #F
   grid-template-columns: 1fr 320px;
   gap: 40px;
 }
+.service-single { max-width: 860px; }
 .service-points { display: grid; gap: 12px; margin: 24px 0; }
 .service-points li {
   display: flex;
@@ -1325,7 +1375,8 @@ details[open] .faq-icon::before, details[open] .faq-icon::after { background: #F
   .process-list { grid-template-columns: repeat(2, 1fr); }
   .feature-row { grid-template-columns: 1fr; gap: 30px; }
   .feature-row.flip .feature-media { order: 0; }
-  .testimonial-grid { grid-template-columns: 1fr; }
+  .stats-band .stats-grid { grid-template-columns: repeat(2, 1fr); padding: 34px 24px; }
+  .review-track .testimonial-card { width: 300px; }
   .top-stories { grid-template-columns: 1fr; }
   .newsletter-block { grid-template-columns: 1fr; }
   .post-grid { grid-template-columns: repeat(2, 1fr); }

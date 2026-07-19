@@ -17,7 +17,7 @@
 </section>
 
 <section>
-  <div class="container service-detail-grid">
+  <div class="container service-single">
     <div>
       <h2>Overview</h2>
       <p style="color: var(--text-dim);"><%= service.description %></p>
@@ -46,14 +46,5 @@
         </div>
       </div>
     </div>
-
-    <aside class="service-sidebar">
-      <h4>All services</h4>
-      <ul>
-        <% services.forEach(function(s) { %>
-          <li><a href="/services/<%= s.slug %>" class="<%= s.slug === service.slug ? 'active' : '' %>"><%= s.title %></a></li>
-        <% }); %>
-      </ul>
-    </aside>
   </div>
 </section>

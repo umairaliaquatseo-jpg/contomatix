@@ -44,8 +44,9 @@
       <p>Six services that compound with each other: research finds the targets, content and links build the authority, on-page work makes it stick.</p>
     </div>
     <div class="service-grid">
-      <% services.forEach(function(s) { %>
+      <% services.forEach(function(s, i) { %>
         <div class="service-card">
+          <span class="service-num">0<%= i + 1 %></span>
           <div class="service-icon">
             <%- include('../partials/icons', { icon: s.icon }) %>
           </div>
@@ -127,41 +128,55 @@
   </div>
 </section>
 
+<section class="stats-band">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-big"><span class="num" data-count="1240">0</span><span class="suffix">+</span><label>Links placed</label></div>
+      <div class="stat-big"><span class="num" data-count="180">0</span><span class="suffix">+</span><label>Campaigns delivered</label></div>
+      <div class="stat-big"><span class="num" data-count="97">0</span><span class="suffix">%</span><label>Clients retained</label></div>
+      <div class="stat-big"><span class="num" data-count="12">0</span><span class="suffix">×</span><label>Avg. traffic growth</label></div>
+    </div>
+  </div>
+</section>
+
 <section class="testimonials">
   <div class="container">
     <div class="section-head centered">
       <span class="eyebrow">Reviews</span>
       <h2>What clients say</h2>
     </div>
-    <div class="testimonial-grid">
-      <!-- Placeholder reviews — replace with real client feedback before launch -->
-      <div class="testimonial-card">
-        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <p class="quote">"Within four months our money pages moved from page 3 to the top 5. The link sheet made it easy to see exactly where every placement went."</p>
-        <div class="reviewer">
-          <img class="reviewer-photo" src="/images/avatars/av1.svg" alt="" width="46" height="46">
-          <span><strong>Saad Ahmed</strong><em>Founder &amp; CEO</em></span>
-        </div>
-        <span class="review-company">Veloura — fashion e-commerce</span>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <p class="quote">"We'd been burned by cheap link sellers before. Contomatix showed us every site before placement — real blogs, real traffic. Night and day difference."</p>
-        <div class="reviewer">
-          <img class="reviewer-photo" src="/images/avatars/av2.svg" alt="" width="46" height="46">
-          <span><strong>Maria Khalid</strong><em>Head of Marketing</em></span>
-        </div>
-        <span class="review-company">Loopdesk — SaaS platform</span>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <p class="quote">"The keyword research alone paid for itself — they found gaps our previous agency missed for two years. Reporting is clear enough to forward straight to my CEO."</p>
-        <div class="reviewer">
-          <img class="reviewer-photo" src="/images/avatars/av3.svg" alt="" width="46" height="46">
-          <span><strong>Daniel Reyes</strong><em>Growth Manager</em></span>
-        </div>
-        <span class="review-company">Nordvia — travel marketplace</span>
-      </div>
+  </div>
+  <!-- Placeholder reviews (stock photos) — replace with real client feedback before launch -->
+  <div class="review-marquee">
+    <div class="review-track">
+      <% for (var rep = 0; rep < 2; rep++) { %>
+        <% reviews.slice(0, 6).forEach(function(r) { %>
+          <div class="testimonial-card">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="quote">"<%= r.quote %>"</p>
+            <div class="reviewer">
+              <img class="reviewer-photo" src="<%= r.photo %>" alt="" width="46" height="46" loading="lazy">
+              <span><strong><%= r.name %></strong><em><%= r.role %></em></span>
+            </div>
+          </div>
+        <% }); %>
+      <% } %>
+    </div>
+  </div>
+  <div class="review-marquee">
+    <div class="review-track review-track-rev">
+      <% for (var rep2 = 0; rep2 < 2; rep2++) { %>
+        <% reviews.slice(6, 12).forEach(function(r) { %>
+          <div class="testimonial-card">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="quote">"<%= r.quote %>"</p>
+            <div class="reviewer">
+              <img class="reviewer-photo" src="<%= r.photo %>" alt="" width="46" height="46" loading="lazy">
+              <span><strong><%= r.name %></strong><em><%= r.role %></em></span>
+            </div>
+          </div>
+        <% }); %>
+      <% } %>
     </div>
   </div>
 </section>
