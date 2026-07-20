@@ -2,18 +2,22 @@
   <defs>
     <linearGradient id="fav-ring" x1="10" y1="8" x2="38" y2="42" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#5EEAD4"/>
-      <stop offset="0.55" stop-color="#2DD4BF"/>
-      <stop offset="1" stop-color="#0D9488"/>
+      <stop offset="0.55" stop-color="#0EA5A0"/>
+      <stop offset="1" stop-color="#0B807C"/>
+    </linearGradient>
+    <linearGradient id="fav-node" x1="30" y1="9" x2="41" y2="19" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FBBF24"/>
+      <stop offset="1" stop-color="#F5A623"/>
     </linearGradient>
   </defs>
-  <rect width="48" height="48" rx="11" fill="#0B1120"/>
+  <rect width="48" height="48" rx="11" fill="#FAF5EF"/>
   <path d="M 34.36 14.68 A 13.9 13.9 0 1 0 34.36 33.32"
         fill="none" stroke="url(#fav-ring)" stroke-width="5.4" stroke-linecap="round"/>
-  <line x1="34.36" y1="14.68" x2="24" y2="24" stroke="#2E3B58" stroke-width="1.5"/>
-  <line x1="34.36" y1="33.32" x2="24" y2="24" stroke="#2E3B58" stroke-width="1.5"/>
-  <circle cx="34.36" cy="14.68" r="3.9" fill="#F5A623"/>
-  <circle cx="34.36" cy="14.68" r="1.4" fill="#0B1120"/>
-  <circle cx="34.36" cy="33.32" r="3.9" fill="#5EEAD4"/>
-  <circle cx="34.36" cy="33.32" r="1.4" fill="#0B1120"/>
-  <circle cx="24" cy="24" r="2.6" fill="#EDF1F7"/>
+  <line x1="34.36" y1="14.68" x2="24" y2="24" stroke="#C9BBA9" stroke-width="1.5"/>
+  <line x1="34.36" y1="33.32" x2="24" y2="24" stroke="#C9BBA9" stroke-width="1.5"/>
+  <circle cx="34.36" cy="14.68" r="3.9" fill="url(#fav-node)"/>
+  <circle cx="34.36" cy="14.68" r="1.4" fill="#FFFFFF"/>
+  <circle cx="34.36" cy="33.32" r="3.9" fill="#14B8A6"/>
+  <circle cx="34.36" cy="33.32" r="1.4" fill="#FFFFFF"/>
+  <circle cx="24" cy="24" r="2.6" fill="#16192A"/>
 </svg>
