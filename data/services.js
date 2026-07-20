@@ -4,9 +4,10 @@ module.exports = [
     title: 'Link Building',
     icon: 'link',
     summary: 'Earn high-authority backlinks that move your rankings, not just your link count.',
-    description: 'We build editorial, white-hat backlinks from relevant, high-authority sites in your niche. Every link is manually vetted for domain authority, topical relevance, and traffic — no PBNs, no link farms.',
+    description: 'We build editorial, white-hat backlinks from relevant, high-authority sites in your niche — through outreach-earned placements and link insertions in already-ranking content. Every link is manually vetted for domain authority, topical relevance, and traffic — no PBNs, no link farms.',
     points: [
       'Manual outreach to relevant, high-DA publishers',
+      'Link insertions in live, already-ranking content for faster authority',
       'Niche-relevant anchor text strategy',
       'Monthly link velocity reports',
       'White-hat, Google guideline compliant'
@@ -14,25 +15,8 @@ module.exports = [
     faqs: [
       { q: 'How many links do I need per month?', a: 'It depends on your niche and competition. After the free audit we recommend a monthly link velocity based on what the top-ranking competitors have — usually somewhere between 4 and 20 quality links a month.' },
       { q: 'What makes a link "high quality"?', a: 'A real site with real organic traffic, topical relevance to your niche, a clean outbound-link history, and an editorial placement inside content — not a sidebar or footer. We check all four before any placement.' },
-      { q: 'Do you use PBNs or link farms?', a: 'Never. Every placement is on an independently owned site we reach through manual outreach. You see the full site list with metrics before anything goes live.' }
-    ]
-  },
-  {
-    slug: 'link-insertion',
-    title: 'Link Insertion',
-    icon: 'insert',
-    summary: 'Get your link placed inside already-ranking, high-traffic content — faster authority, faster results.',
-    description: 'Instead of waiting for new content to rank, we place your link inside existing, already-indexed articles that are already ranking and receiving organic traffic — a faster way to pass authority to your site.',
-    points: [
-      'Placement in live, ranking content',
-      'Contextual, relevant surrounding copy',
-      'Faster time-to-index than fresh guest posts',
-      'Detailed placement reporting'
-    ],
-    faqs: [
-      { q: 'How is link insertion different from guest posting?', a: 'A guest post is a brand-new article that has to be indexed and earn authority from scratch. A link insertion goes into a page that already ranks and already has authority — so the equity passes to your site much faster.' },
-      { q: 'How fast do inserted links get indexed?', a: 'Because the host page is already in Google\'s index, most insertions are re-crawled within days. We typically see them picked up within one to two weeks.' },
-      { q: 'Can I choose which articles my links go into?', a: 'Yes — you get the candidate URLs with traffic and ranking data before placement, and nothing goes live without your approval.' }
+      { q: 'Do you use PBNs or link farms?', a: 'Never. Every placement is on an independently owned site we reach through manual outreach. You see the full site list with metrics before anything goes live.' },
+      { q: 'What is a link insertion and do you do those too?', a: 'Yes — instead of only earning links in brand-new content, we also place links inside existing articles that already rank and get traffic. Since the page already has authority, it passes to your site faster than waiting on a new placement to be indexed.' }
     ]
   },
   {

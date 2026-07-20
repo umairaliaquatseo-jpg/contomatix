@@ -22,7 +22,7 @@
       <h2>Overview</h2>
       <p style="color: var(--text-dim);"><%= service.description %></p>
 
-      <%- include('../partials/video-panel', { videoTitle: service.title + ' — how it works' }) %>
+      <%- include('../partials/video-panel', { videoTitle: service.title + ' — how it works', demoImage: '/images/demo/' + service.slug + '.svg' }) %>
 
       <h2>What's included</h2>
       <ul class="service-points">
@@ -30,10 +30,6 @@
           <li><%= pt %></li>
         <% }); %>
       </ul>
-
-      <h2 style="margin-top: 1.8em;">The difference it makes</h2>
-      <p style="color: var(--text-dim);">Drag the slider to compare a typical site before and after a sustained campaign.</p>
-      <%- include('../partials/compare') %>
 
       <% if (service.faqs && service.faqs.length) { %>
         <h2 style="margin-top: 1.8em;"><%= service.title %> FAQs</h2>

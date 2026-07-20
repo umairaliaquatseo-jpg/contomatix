@@ -1,3 +1,21 @@
+// ---------- Cookie consent banner ----------
+(function () {
+  var KEY = 'contomatix-cookie-consent';
+  var banner = document.getElementById('cookie-banner');
+  if (!banner) return;
+  if (!localStorage.getItem(KEY)) {
+    banner.hidden = false;
+  }
+  function dismiss(value) {
+    localStorage.setItem(KEY, value);
+    banner.hidden = true;
+  }
+  var acceptBtn = document.getElementById('cookie-accept');
+  var declineBtn = document.getElementById('cookie-decline');
+  if (acceptBtn) acceptBtn.addEventListener('click', function () { dismiss('accepted'); });
+  if (declineBtn) declineBtn.addEventListener('click', function () { dismiss('declined'); });
+})();
+
 // ---------- Mobile nav ----------
 (function () {
   var toggle = document.getElementById('nav-toggle');
@@ -178,10 +196,10 @@ function initGsapScroll() {
 
   var ease = 'power3.out';
 
-  // Section heads: fade up
+  // Section heads: fade up with a touch of scale for polish
   gsap.utils.toArray('.section-head').forEach(function (el) {
     gsap.from(el, {
-      y: 34, opacity: 0, duration: 0.55, ease: ease,
+      y: 34, scale: 0.975, opacity: 0, duration: 0.6, ease: 'power4.out',
       scrollTrigger: { trigger: el, start: 'top 88%' }
     });
   });
@@ -191,10 +209,35 @@ function initGsapScroll() {
     var items = grid.children;
     if (!items.length) return;
     gsap.from(items, {
-      y: 44, opacity: 0, duration: 0.5, ease: ease, stagger: 0.07,
+      y: 46, opacity: 0, duration: 0.55, ease: 'power4.out', stagger: 0.09,
       scrollTrigger: { trigger: grid, start: 'top 86%' }
     });
   });
+
+  // Hero floating stat chips: settle in after the headline
+  if (gsap.utils.toArray('.hero-chip').length) {
+    gsap.from('.hero-chip', {
+      y: 26, opacity: 0, duration: 0.6, ease: 'back.out(1.6)', stagger: 0.12, delay: 0.55
+    });
+  }
+
+  // Hero dashboard shot: gentle parallax drift as you scroll past it
+  var heroShot = document.querySelector('.hero-shot');
+  if (heroShot) {
+    gsap.to(heroShot, {
+      y: -34, ease: 'none',
+      scrollTrigger: { trigger: heroShot, start: 'top bottom', end: 'bottom top', scrub: 0.6 }
+    });
+  }
+
+  // Trust marquee: fade the whole strip in
+  var trustStrip = document.querySelector('.trust-strip');
+  if (trustStrip) {
+    gsap.from(trustStrip, {
+      opacity: 0, y: 20, duration: 0.6, ease: ease,
+      scrollTrigger: { trigger: trustStrip, start: 'top 92%' }
+    });
+  }
 
   // Feature rows: media and copy slide in from opposite sides (left50To0 / right50To0)
   gsap.utils.toArray('.feature-row').forEach(function (row) {
@@ -295,17 +338,40 @@ function initVideoPanels() {
   document.querySelectorAll('.video-panel').forEach(function (panel) {
     var fill = panel.querySelector('.vc-progress-fill');
     var time = panel.querySelector('.vc-time');
+    var img = panel.querySelector('.video-body img');
     if (!fill || !time) return;
     var DURATION = 30;
-    var start = performance.now();
+    var elapsed = 0;
+    var lastTs = null;
+    var paused = false;
     function fmt(s) { return '0:' + String(Math.floor(s)).padStart(2, '0'); }
-    function tick(now) {
-      var t = ((now - start) / 1000) % DURATION;
+    function render() {
+      var t = elapsed % DURATION;
       fill.style.width = (2 + (t / DURATION) * 96).toFixed(1) + '%';
       time.textContent = fmt(t) + ' / ' + fmt(DURATION);
+    }
+    function tick(now) {
+      if (lastTs === null) lastTs = now;
+      if (!paused) elapsed += (now - lastTs) / 1000;
+      lastTs = now;
+      render();
       requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
+
+    function setPaused(next) {
+      paused = next;
+      panel.classList.toggle('is-paused', paused);
+      if (img) img.style.animationPlayState = paused ? 'paused' : 'running';
+      var icons = panel.querySelectorAll('.vc-play, .vpt-icon');
+      icons.forEach(function (el) { el.textContent = paused ? '▶' : '❚❚'; });
+    }
+    setPaused(false);
+
+    var playBtn = panel.querySelector('.vc-play');
+    var toggleBtn = panel.querySelector('.video-play-toggle');
+    if (playBtn) playBtn.addEventListener('click', function () { setPaused(!paused); });
+    if (toggleBtn) toggleBtn.addEventListener('click', function () { setPaused(!paused); });
   });
 }
 
