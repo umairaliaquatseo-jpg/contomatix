@@ -16,6 +16,74 @@
   if (declineBtn) declineBtn.addEventListener('click', function () { dismiss('declined'); });
 })();
 
+// ---------- Blog post: auto-generated table of contents ----------
+function initTableOfContents() {
+  const article = document.querySelector('.post-content');
+  if (!article) return;
+  const headings = article.querySelectorAll('h2');
+  if (headings.length < 3) return; // not worth a TOC for a short post
+
+  const used = new Set();
+  const items = [...headings].map(function (h) {
+    let slug = h.textContent.toLowerCase().trim()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/\s+/g, '-');
+    let unique = slug;
+    let i = 2;
+    while (used.has(unique)) { unique = slug + '-' + i++; }
+    used.add(unique);
+    h.id = unique;
+    return { id: unique, text: h.textContent };
+  });
+
+  const toc = document.createElement('nav');
+  toc.className = 'post-toc';
+  toc.setAttribute('aria-label', 'Table of contents');
+  toc.innerHTML =
+    '<button class="post-toc-toggle" type="button" aria-expanded="true">' +
+      '<span>On this page</span>' +
+      '<svg width="12" height="7" viewBox="0 0 12 7" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>' +
+    '</button>' +
+    '<ol class="post-toc-list">' +
+      items.map(function (it) { return '<li><a href="#' + it.id + '">' + it.text + '</a></li>'; }).join('') +
+    '</ol>';
+
+  article.parentElement.insertBefore(toc, article);
+
+  const toggle = toc.querySelector('.post-toc-toggle');
+  toggle.addEventListener('click', function () {
+    const open = toc.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(!open ? false : true));
+    toc.classList.toggle('collapsed');
+  });
+
+  toc.querySelectorAll('.post-toc-list a').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.getElementById(a.getAttribute('href').slice(1));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Highlight the active section while scrolling
+  if ('IntersectionObserver' in window) {
+    const links = toc.querySelectorAll('.post-toc-list a');
+    const map = {};
+    links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+    const obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        const link = map[entry.target.id];
+        if (!link) return;
+        if (entry.isIntersecting) {
+          links.forEach(function (l) { l.classList.remove('active'); });
+          link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    headings.forEach(function (h) { obs.observe(h); });
+  }
+}
+
 // ---------- Mobile nav ----------
 (function () {
   var toggle = document.getElementById('nav-toggle');
@@ -487,4 +555,5 @@ document.addEventListener('DOMContentLoaded', function () {
   initCompare();
   initVideoPanels();
   initBigCounters();
+  initTableOfContents();
 });
