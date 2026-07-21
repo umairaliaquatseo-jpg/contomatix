@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="1024" height="1024" role="img" aria-label="Contomatix logo">
+  <defs>
+    <linearGradient id="logo-ring" x1="10" y1="8" x2="38" y2="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2DD4BF"/>
+      <stop offset="0.55" stop-color="#0EA5A0"/>
+      <stop offset="1" stop-color="#0B807C"/>
+    </linearGradient>
+    <linearGradient id="logo-node" x1="30" y1="9" x2="41" y2="19" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FBBF24"/>
+      <stop offset="1" stop-color="#F5A623"/>
+    </linearGradient>
+  </defs>
+  <path d="M 35.52 13.63 A 15.5 15.5 0 1 0 35.52 34.37"
+        fill="none" stroke="url(#logo-ring)" stroke-width="6" stroke-linecap="round"/>
+  <line x1="35.52" y1="13.63" x2="24" y2="24" stroke="#C9BBA9" stroke-width="1.7"/>
+  <line x1="35.52" y1="34.37" x2="24" y2="24" stroke="#C9BBA9" stroke-width="1.7"/>
+  <circle cx="35.52" cy="13.63" r="4.4" fill="url(#logo-node)"/>
+  <circle cx="35.52" cy="13.63" r="1.6" fill="#FFFFFF"/>
+  <circle cx="35.52" cy="34.37" r="4.4" fill="#14B8A6"/>
+  <circle cx="35.52" cy="34.37" r="1.6" fill="#FFFFFF"/>
+  <circle cx="24" cy="24" r="2.9" fill="#16192A"/>
+</svg>
