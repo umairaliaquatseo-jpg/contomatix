@@ -11,7 +11,14 @@
   <div class="container team-grid">
     <% team.forEach(function(member) { %>
       <div class="team-card">
-        <div class="team-avatar"><%= member.name.split(' ').map(function(w){ return w[0]; }).join('') %></div>
+        <% if (member.hasPhoto) { %>
+          <div class="team-avatar team-avatar-photo">
+            <img src="<%= member.photo %>" alt="<%= member.name %>" width="88" height="88">
+            <span class="team-avatar-badge" aria-hidden="true"><%- include('../partials/logo', { logoSize: 18, logoId: 'badge-' + member.name.replace(/\s+/g,'') }) %></span>
+          </div>
+        <% } else { %>
+          <div class="team-avatar"><%= member.name.split(' ').map(function(w){ return w[0]; }).join('') %></div>
+        <% } %>
         <h3><%= member.name %></h3>
         <div class="role"><%= member.role %></div>
         <p class="bio"><%= member.bio %></p>

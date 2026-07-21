@@ -1168,10 +1168,16 @@ details[open] .faq-icon::before, details[open] .faq-icon::after { background: #F
 }
 .story-featured .story-image {
   aspect-ratio: 16/10;
+  overflow: hidden;
   background:
     radial-gradient(320px 180px at 70% 25%, rgba(20,184,166,0.16), transparent 70%),
     radial-gradient(260px 160px at 20% 80%, rgba(249,115,22,0.12), transparent 70%),
     var(--surface-2);
+}
+.story-image img, .story-thumb img, .post-image img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .story-featured .story-body { padding: 24px; }
 .story-side { display: grid; gap: 16px; }
@@ -1186,6 +1192,7 @@ details[open] .faq-icon::before, details[open] .faq-icon::after { background: #F
 .story-card .story-thumb {
   width: 96px; height: 76px;
   flex-shrink: 0;
+  overflow: hidden;
   border-radius: var(--radius-sm);
   background:
     radial-gradient(80px 50px at 70% 30%, rgba(20,184,166,0.18), transparent 70%),
@@ -1262,6 +1269,7 @@ details[open] .faq-icon::before, details[open] .faq-icon::after { background: #F
 }
 .post-card .post-image {
   aspect-ratio: 16/10;
+  overflow: hidden;
   background:
     radial-gradient(220px 130px at 75% 20%, rgba(20,184,166,0.16), transparent 70%),
     radial-gradient(200px 120px at 15% 85%, rgba(249,115,22,0.1), transparent 70%),
@@ -1290,8 +1298,46 @@ details[open] .faq-icon::before, details[open] .faq-icon::after { background: #F
 
 /* Single blog post */
 .post-hero { padding: 60px 0 30px; border-bottom: 1px solid var(--border); }
-.post-hero h1 { font-size: 2.1rem; max-width: 44ch; }
+.post-hero h1 { font-size: 2.1rem; max-width: 44ch; margin-bottom: 0.5em; }
 .post-meta { color: var(--text-faint); font-size: 0.85rem; }
+
+.post-author {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 16px 6px 6px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.post-author:hover { border-color: rgba(14,165,160,0.4); box-shadow: var(--shadow-soft); }
+.post-author-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--accent-teal), var(--accent-amber));
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.8rem;
+  font-family: var(--font-display);
+}
+.post-author-avatar-photo { background: none; padding: 0; overflow: hidden; }
+.post-author-avatar-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.post-author-info { display: flex; flex-direction: column; line-height: 1.3; }
+.post-author-info strong { font-size: 0.9rem; color: var(--text); }
+.post-author-role { font-size: 0.78rem; color: var(--text-faint); }
+
+.post-cover {
+  max-width: 760px;
+  margin: 32px auto 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+}
+.post-cover img { width: 100%; display: block; }
 .post-content { max-width: 700px; margin: 0 auto; padding: 50px 24px; color: var(--text-dim); }
 .post-content p { margin-bottom: 1.4em; }
 .post-content h2 { color: var(--text); font-size: 1.5rem; margin: 1.6em 0 0.6em; }
@@ -1399,6 +1445,28 @@ details[open] .faq-icon::before, details[open] .faq-icon::after { background: #F
   font-weight: 700;
   font-size: 1.45rem;
   color: #FFFFFF;
+}
+.team-avatar-photo {
+  position: relative;
+  background: none;
+  padding: 0;
+  overflow: visible;
+}
+.team-avatar-photo img {
+  width: 88px; height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+.team-avatar-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--surface);
+  box-shadow: 0 0 0 3px var(--surface), 0 6px 14px -6px rgba(23,20,44,0.35);
+  display: flex; align-items: center; justify-content: center;
 }
 .team-card h3 { font-size: 1.05rem; margin-bottom: 2px; }
 .team-card .role { color: var(--accent-teal-dim); font-size: 0.82rem; font-family: var(--font-mono); margin-bottom: 10px; }

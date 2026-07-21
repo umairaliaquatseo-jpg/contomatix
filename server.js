@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+const fs = require('fs');
 const express = require('express');
 const path = require('path');
 const expressLayouts = require('express-ejs-layouts');
@@ -10,6 +11,15 @@ const team = require('./data/team');
 const reviews = require('./data/reviews');
 const site = require('./data/site');
 const { sendContactEmail, smtpConfigured } = require('./lib/mailer');
+
+// Only render a member's <img> if the photo file actually exists, so a
+// missing upload falls back to the initials avatar instead of a broken image.
+function withPhotoCheck(member) {
+  return {
+    ...member,
+    hasPhoto: Boolean(member.photo && fs.existsSync(path.join(__dirname, 'public', member.photo)))
+  };
+}
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -75,11 +85,13 @@ app.get('/blog', (req, res) => {
 app.get('/blog/:slug', (req, res) => {
   const post = blogPosts.find(p => p.slug === req.params.slug);
   if (!post) return res.status(404).render('pages/404', { title: 'Page not found', pageClass: 'page-404' });
+  const author = post.author ? team.find(m => m.name === post.author) : null;
   res.render('pages/blog-post', {
     title: `${post.title} — Contomatix Blog`,
     description: post.excerpt,
     pageClass: 'page-blog-post',
-    post
+    post,
+    author: author ? withPhotoCheck(author) : null
   });
 });
 
@@ -88,7 +100,7 @@ app.get('/team', (req, res) => {
     title: 'Our Team — Contomatix',
     description: 'Meet the team behind Contomatix.',
     pageClass: 'page-team',
-    team
+    team: team.map(withPhotoCheck)
   });
 });
 

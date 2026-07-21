@@ -2,9 +2,34 @@
   <div class="container">
     <span class="story-tag"><%= post.category %></span>
     <h1><%= post.title %></h1>
-    <p class="post-meta">Published on <%= post.date %></p>
+
+    <% if (author) { %>
+      <a href="/team" class="post-author">
+        <% if (author.hasPhoto) { %>
+          <span class="post-author-avatar post-author-avatar-photo">
+            <img src="<%= author.photo %>" alt="<%= author.name %>" width="40" height="40">
+          </span>
+        <% } else { %>
+          <span class="post-author-avatar"><%= author.name.split(' ').map(function(w){ return w[0]; }).join('') %></span>
+        <% } %>
+        <span class="post-author-info">
+          <strong><%= author.name %></strong>
+          <span class="post-author-role"><%= author.role %> · Published on <%= post.date %></span>
+        </span>
+      </a>
+    <% } else { %>
+      <p class="post-meta">Published on <%= post.date %></p>
+    <% } %>
   </div>
 </section>
+
+<% if (post.image) { %>
+  <div class="container">
+    <div class="post-cover">
+      <img src="<%= post.image %>" alt="<%= post.title %>" width="760" height="560">
+    </div>
+  </div>
+<% } %>
 
 <article class="post-content">
   <%- post.content %>

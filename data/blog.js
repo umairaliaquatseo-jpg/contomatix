@@ -5,7 +5,8 @@ module.exports = [
     category: 'B2B SEO',
     excerpt: 'Why shipping, freight, and port-service companies lose bids to competitors online — and the maritime digital marketing playbook that actually fixes it.',
     date: '2026-07-19',
-    image: '',
+    author: 'Umaira Liaquat',
+    image: '/images/illus-maritime-network.svg',
     content: `
 <p>A ship charterer, a bunker fuel supplier, and a freight forwarding company can all run flawless operations and still lose a six-figure contract to a competitor with a worse fleet and a better website. Maritime buyers research online exactly like every other B2B buyer does — they just do it for higher stakes, longer sales cycles, and far more technical questions. <strong>Maritime digital marketing</strong> is the discipline of making sure your company is the one they find, trust, and request a quote from first.</p>
 
