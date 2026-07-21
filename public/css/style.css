@@ -1297,21 +1297,43 @@ details[open] .faq-icon::before, details[open] .faq-icon::after { background: #F
 .pagination .current { background: var(--dark); color: #FFFFFF; border-color: var(--dark); }
 
 /* Single blog post */
-.post-hero { padding: 60px 0 30px; border-bottom: 1px solid var(--border); }
-.post-hero h1 { font-size: 2.1rem; max-width: 44ch; margin-bottom: 0.5em; }
+.post-hero { padding: 44px 0 34px; border-bottom: 1px solid var(--border); }
+.post-hero h1 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); max-width: 26ch; margin: 18px 0 22px; line-height: 1.12; }
 .post-meta { color: var(--text-faint); font-size: 0.85rem; }
 
-.post-author {
-  display: inline-flex;
+.post-breadcrumb {
+  display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 6px 16px 6px 6px;
-  border-radius: 999px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: var(--text-faint);
 }
-.post-author:hover { border-color: rgba(14,165,160,0.4); box-shadow: var(--shadow-soft); }
+.post-breadcrumb a { color: var(--accent-teal-dim); font-weight: 600; }
+.post-breadcrumb a:hover { color: var(--accent-teal); }
+.post-breadcrumb-sep { color: var(--border-light); }
+.post-breadcrumb-current {
+  color: var(--text-faint);
+  max-width: 40ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.post-share { display: flex; gap: 10px; margin: 18px 0 4px; }
+.post-share-btn {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #FFFFFF;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.post-share-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); }
+.post-share-x { background: #16192A; }
+.post-share-linkedin { background: #0A66C2; }
+.post-share-facebook { background: #1877F2; }
+.post-share-email { background: #6B7280; }
+
 .post-author-avatar {
   width: 40px; height: 40px;
   border-radius: 50%;
@@ -1325,9 +1347,31 @@ details[open] .faq-icon::before, details[open] .faq-icon::after { background: #F
 }
 .post-author-avatar-photo { background: none; padding: 0; overflow: hidden; }
 .post-author-avatar-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-.post-author-info { display: flex; flex-direction: column; line-height: 1.3; }
-.post-author-info strong { font-size: 0.9rem; color: var(--text); }
-.post-author-role { font-size: 0.78rem; color: var(--text-faint); }
+
+.post-byline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding-top: 6px;
+}
+.post-byline-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.post-byline-text { display: flex; flex-direction: column; line-height: 1.3; }
+.post-byline-label { font-size: 0.76rem; color: var(--text-faint); }
+.post-byline-text strong, .post-byline-meta strong { display: block; font-size: 0.88rem; color: var(--text); font-weight: 600; }
+.post-byline-meta { display: flex; flex-direction: column; line-height: 1.3; }
+.post-byline-sep { width: 1px; height: 30px; background: var(--border); }
+.post-byline-read {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
 
 .post-cover {
   max-width: 760px;

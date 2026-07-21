@@ -1,25 +1,62 @@
+<%
+var postUrl = site.baseUrl + '/blog/' + post.slug;
+var shareTitle = encodeURIComponent(post.title);
+var shareUrl = encodeURIComponent(postUrl);
+%>
 <section class="post-hero">
   <div class="container">
-    <span class="story-tag"><%= post.category %></span>
+    <nav class="post-breadcrumb" aria-label="Breadcrumb">
+      <a href="/blog">Blog</a>
+      <span class="post-breadcrumb-sep">&rsaquo;</span>
+      <a href="/blog?category=<%= encodeURIComponent(post.category) %>"><%= post.category %></a>
+      <span class="post-breadcrumb-sep">&rsaquo;</span>
+      <span class="post-breadcrumb-current"><%= post.title %></span>
+    </nav>
+
+    <div class="post-share">
+      <a class="post-share-btn post-share-x" href="https://twitter.com/intent/tweet?url=<%= shareUrl %>&text=<%= shareTitle %>" target="_blank" rel="noopener" aria-label="Share on X">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M17.7 3h3l-6.6 7.5L21.8 21h-6.1l-4.8-6.3L5.4 21h-3l7-8L2.5 3h6.2l4.3 5.7L17.7 3zm-1.1 16.2h1.7L7.8 4.7H6l10.6 14.5z"/></svg>
+      </a>
+      <a class="post-share-btn post-share-linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=<%= shareUrl %>" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M6.5 8.5H3.8V20h2.7V8.5zM5.1 3.5a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2zM20.2 13c0-3-1.6-4.7-4-4.7-1.6 0-2.5.9-2.9 1.6V8.5h-2.7V20h2.7v-6.1c0-1.4.7-2.4 2-2.4s1.9.9 1.9 2.4V20h2.7l.3-7z"/></svg>
+      </a>
+      <a class="post-share-btn post-share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= shareUrl %>" target="_blank" rel="noopener" aria-label="Share on Facebook">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.2-1.5 1.5-1.5h1.4V4.9c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.9V11H8v3h2.5v7h3z"/></svg>
+      </a>
+      <a class="post-share-btn post-share-email" href="mailto:?subject=<%= shareTitle %>&body=<%= shareUrl %>" aria-label="Share by email">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+      </a>
+    </div>
+
     <h1><%= post.title %></h1>
 
-    <% if (author) { %>
-      <a href="/team" class="post-author">
-        <% if (author.hasPhoto) { %>
-          <span class="post-author-avatar post-author-avatar-photo">
-            <img src="<%= author.photo %>" alt="<%= author.name %>" width="40" height="40">
+    <div class="post-byline">
+      <% if (author) { %>
+        <a href="/team" class="post-byline-author">
+          <% if (author.hasPhoto) { %>
+            <span class="post-author-avatar post-author-avatar-photo">
+              <img src="<%= author.photo %>" alt="<%= author.name %>" width="40" height="40">
+            </span>
+          <% } else { %>
+            <span class="post-author-avatar"><%= author.name.split(' ').map(function(w){ return w[0]; }).join('') %></span>
+          <% } %>
+          <span class="post-byline-text">
+            <span class="post-byline-label">Written by</span>
+            <strong><%= author.name %></strong>
           </span>
-        <% } else { %>
-          <span class="post-author-avatar"><%= author.name.split(' ').map(function(w){ return w[0]; }).join('') %></span>
-        <% } %>
-        <span class="post-author-info">
-          <strong><%= author.name %></strong>
-          <span class="post-author-role"><%= author.role %> · Published on <%= post.date %></span>
-        </span>
-      </a>
-    <% } else { %>
-      <p class="post-meta">Published on <%= post.date %></p>
-    <% } %>
+        </a>
+        <span class="post-byline-sep"></span>
+      <% } %>
+      <span class="post-byline-meta">
+        <span class="post-byline-label">Published on</span>
+        <strong><%= post.date %></strong>
+      </span>
+      <span class="post-byline-sep"></span>
+      <span class="post-byline-read">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <%= readMinutes %> min read
+      </span>
+    </div>
   </div>
 </section>
 

@@ -94,12 +94,15 @@ app.get('/blog/:slug', (req, res) => {
   const post = blogPosts.find(p => p.slug === req.params.slug);
   if (!post) return res.status(404).render('pages/404', { title: 'Page not found', pageClass: 'page-404' });
   const author = post.author ? team.find(m => m.name === post.author) : null;
+  const wordCount = post.content.replace(/<[^>]+>/g, ' ').trim().split(/\s+/).length;
+  const readMinutes = Math.max(1, Math.round(wordCount / 200));
   res.render('pages/blog-post', {
     title: `${post.title} — Contomatix Blog`,
     description: post.excerpt,
     pageClass: 'page-blog-post',
     post,
-    author: author ? withPhotoCheck(author) : null
+    author: author ? withPhotoCheck(author) : null,
+    readMinutes
   });
 });
 
