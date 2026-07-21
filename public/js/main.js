@@ -48,7 +48,12 @@ function initTableOfContents() {
       items.map(function (it) { return '<li><a href="#' + it.id + '">' + it.text + '</a></li>'; }).join('') +
     '</ol>';
 
-  article.parentElement.insertBefore(toc, article);
+  var rail = document.querySelector('.post-toc-rail');
+  if (rail) {
+    rail.appendChild(toc);
+  } else {
+    article.parentElement.insertBefore(toc, article);
+  }
 
   const toggle = toc.querySelector('.post-toc-toggle');
   toggle.addEventListener('click', function () {

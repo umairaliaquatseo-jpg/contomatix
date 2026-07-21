@@ -1382,10 +1382,18 @@ details[open] .faq-icon::before, details[open] .faq-icon::after { background: #F
   box-shadow: var(--shadow-card);
 }
 .post-cover img { width: 100%; display: block; }
+.post-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 700px) 260px;
+  justify-content: center;
+  gap: 48px;
+  align-items: start;
+  padding-top: 40px;
+}
+.post-toc-rail { position: sticky; top: 100px; }
 .post-toc {
-  max-width: 700px;
-  margin: 30px auto 0;
-  padding: 0 24px;
+  margin: 0;
+  padding: 0;
 }
 .post-toc-toggle {
   width: 100%;
@@ -1434,7 +1442,13 @@ details[open] .faq-icon::before, details[open] .faq-icon::after { background: #F
 }
 .post-toc-list a:hover, .post-toc-list a.active { color: var(--accent-teal-dim); font-weight: 600; }
 
-.post-content { max-width: 700px; margin: 0 auto; padding: 50px 24px; color: var(--text-dim); }
+.post-content img {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+  margin: 8px 0 28px;
+}
+.post-content { color: var(--text-dim); padding-bottom: 40px; min-width: 0; }
 .post-content p { margin-bottom: 1.4em; }
 .post-content h2 { color: var(--text); font-size: 1.5rem; margin: 1.6em 0 0.6em; }
 .post-content h2:first-child { margin-top: 0; }
@@ -1786,6 +1800,8 @@ details[open] .faq-icon::before, details[open] .faq-icon::after { background: #F
   .post-grid { grid-template-columns: repeat(2, 1fr); }
   .service-detail-grid { grid-template-columns: 1fr; }
   .service-sidebar { position: static; }
+  .post-layout { grid-template-columns: 1fr; }
+  .post-toc-rail { position: static; order: -1; }
   .contact-grid { grid-template-columns: 1fr; }
   .footer-columns { grid-template-columns: repeat(2, 1fr); }
 }

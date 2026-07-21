@@ -68,9 +68,12 @@ var shareUrl = encodeURIComponent(postUrl);
   </div>
 <% } %>
 
-<article class="post-content">
-  <%- post.content %>
-</article>
+<div class="container post-layout">
+  <article class="post-content">
+    <%- post.content %>
+  </article>
+  <aside class="post-toc-rail"></aside>
+</div>
 
 <div class="container" style="padding-bottom: 60px;">
   <a href="/blog" class="btn btn-outline">&larr; Back to blog</a>

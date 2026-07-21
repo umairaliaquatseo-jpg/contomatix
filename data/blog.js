@@ -13,7 +13,7 @@ module.exports = [
 <p>This guide breaks down what that actually involves for shipping lines, port agencies, freight forwarders, marine equipment suppliers, and every other business operating in the maritime and offshore space — what to prioritize first, what most agencies get wrong about this industry, and how to tell a genuine maritime marketing partner from a generic digital agency that has never opened a bill of lading.</p>
 <p>None of this replaces the relationships and reputation the maritime industry has always run on. It compounds them — the same way a strong word-of-mouth reputation used to spread at a shipping conference now needs to show up the moment someone searches your company name, your service, or your route online, because that search happens whether you've invested in it or not.</p>
 
-<img src="/images/illus-maritime-network.svg" alt="Global shipping network showing ports connected to a fleet, with RFQ leads coming in from each region" width="760" height="560">
+<img src="/images/blog/maritime-ship-port.jpg" alt="Large container ship being loaded by cranes at a busy port" width="1400" height="933">
 
 <h2>What Is Maritime Digital Marketing?</h2>
 <p>Maritime digital marketing applies SEO, content, paid advertising, and reputation management to the specific way maritime and shipping companies get chosen — long sales cycles, technical decision-makers, procurement teams that research for weeks before a single email is sent, and searches that use industry-specific terminology no generic marketer would think to target.</p>
@@ -52,7 +52,7 @@ module.exports = [
 <p>Content is where maritime companies can outmaneuver much larger competitors, because most large shipping and logistics companies still publish almost nothing useful. A well-written explainer on emissions regulations, a clear breakdown of demurrage calculation, or an honest comparison of chartering options answers exactly what a buyer is searching for at 11pm before a decision — and it builds the kind of trust a sales call alone never will.</p>
 <p>The strongest maritime content programs mix three formats: regulatory and compliance explainers (evergreen, high search volume, constantly relevant as rules update), operational how-to content aimed at the procurement and operations staff who actually make vendor decisions, and case studies or route-specific breakdowns that double as commercial proof points a sales team can send directly to a prospect mid-negotiation.</p>
 
-<img src="/images/illus-maritime-dashboard.svg" alt="Analytics dashboard showing organic traffic, RFQ form submissions, and top-ranking maritime industry keywords" width="1200" height="660">
+<img src="/images/blog/maritime-ship-bw.jpg" alt="Container ship loaded with cargo at harbor" width="1400" height="933">
 
 <h2>LinkedIn &amp; B2B Social for Maritime Brands</h2>
 <p>Maritime buyers are not scrolling Instagram for a bunker fuel supplier. LinkedIn is where this industry actually lives online — superintendents, procurement managers, brokers, and executives all use it to research vendors, follow industry news, and vet companies before a first call. A maritime company with an active, technically credible LinkedIn presence — sharing real operational updates, regulatory commentary, and case studies rather than generic stock-photo posts — builds the kind of familiarity that shortens a sales cycle measured in months.</p>
