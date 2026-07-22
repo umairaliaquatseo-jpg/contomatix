@@ -178,8 +178,10 @@ h1, h2, h3, h4 {
 .hero-center > *:nth-child(4) { animation-delay: 0.22s; }
 .hero-center > *:nth-child(5) { animation-delay: 0.3s; }
 .hero-shot {
-  opacity: 0;
-  animation: fadeUp 0.5s cubic-bezier(0.22, 0.9, 0.35, 1) 0.32s forwards;
+  /* No entrance-delay animation here on purpose: this image is the page's
+     LCP element, and animating it in from opacity:0 directly delays the
+     Largest Contentful Paint metric by however long the animation-delay +
+     duration is. It should be visible the instant it's painted. */
 }
 
 .page-hero-inner > * {

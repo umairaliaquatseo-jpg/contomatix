@@ -16,8 +16,12 @@
   <meta name="twitter:description" content="<%= description %>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
   <link rel="stylesheet" href="/css/style.css?v=<%= site.assetVersion %>">
+  <% if (pageClass === 'page-home') { %>
+  <link rel="preload" as="image" href="/images/hero-dashboard.svg" fetchpriority="high">
+  <% } %>
   <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
   <meta name="google-site-verification" content="8lh8KHul6gzaUG0L875alrbFWVjjM2H-CaOl2erKwYU" />
 
