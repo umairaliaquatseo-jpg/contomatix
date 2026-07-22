@@ -56,3 +56,36 @@
     </div>
   </div>
 </section>
+
+<script type="application/ld+json">
+  <%- JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.title,
+    description: service.summary,
+    serviceType: service.title,
+    areaServed: 'Worldwide',
+    provider: {
+      '@type': 'Organization',
+      name: 'Contomatix',
+      url: site.baseUrl
+    },
+    url: site.baseUrl + '/services/' + service.slug
+  }) %>
+</script>
+
+<% if (service.faqs && service.faqs.length) { %>
+<script type="application/ld+json">
+  <%- JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: service.faqs.map(function(f) {
+      return {
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a }
+      };
+    })
+  }) %>
+</script>
+<% } %>

@@ -165,38 +165,44 @@
 </section>
 
 <section class="faq">
+  <%
+  var homeFaqs = [
+    { q: 'How long until I see results?', a: 'Most sites see meaningful keyword movement within 3–6 months. Link building compounds: early links start the momentum, and rankings accelerate as authority builds. We set realistic milestones in your first-month roadmap.' },
+    { q: 'Are your links white-hat and safe?', a: 'Yes. Every placement is on a real site with real organic traffic, earned through manual outreach. No PBNs, no link farms, no automated schemes — nothing that puts your domain at risk.' },
+    { q: 'Do you place links in existing articles too, or only new ones?', a: 'Both. Our link building service covers outreach-earned placements in new content as well as insertions inside existing, already-ranking articles — whichever passes authority to your site faster for a given target.' },
+    { q: 'Do you guarantee #1 rankings?', a: "No — and you should be wary of anyone who does. Google's algorithm isn't for sale. What we do guarantee: real links on vetted sites, transparent reporting, and a strategy adjusted monthly based on what the data shows." },
+    { q: 'Can I approve sites before links go live?', a: 'Yes. You get the target list with metrics (DR, traffic, niche) before we place anything, and a live link sheet you can check at any time.' },
+    { q: 'How do we get started?', a: "Send us your site through the contact form or WhatsApp. We'll run a free audit of your backlink profile and keywords, then send a plan tailored to your niche — no obligation." }
+  ];
+  %>
   <div class="container faq-inner">
     <div class="section-head centered">
       <span class="eyebrow">FAQs</span>
       <h2>Questions, answered</h2>
     </div>
     <div class="faq-list">
-      <details>
-        <summary>How long until I see results?<span class="faq-icon"></span></summary>
-        <p>Most sites see meaningful keyword movement within 3–6 months. Link building compounds: early links start the momentum, and rankings accelerate as authority builds. We set realistic milestones in your first-month roadmap.</p>
-      </details>
-      <details>
-        <summary>Are your links white-hat and safe?<span class="faq-icon"></span></summary>
-        <p>Yes. Every placement is on a real site with real organic traffic, earned through manual outreach. No PBNs, no link farms, no automated schemes — nothing that puts your domain at risk.</p>
-      </details>
-      <details>
-        <summary>Do you place links in existing articles too, or only new ones?<span class="faq-icon"></span></summary>
-        <p>Both. Our link building service covers outreach-earned placements in new content as well as insertions inside existing, already-ranking articles — whichever passes authority to your site faster for a given target.</p>
-      </details>
-      <details>
-        <summary>Do you guarantee #1 rankings?<span class="faq-icon"></span></summary>
-        <p>No — and you should be wary of anyone who does. Google's algorithm isn't for sale. What we do guarantee: real links on vetted sites, transparent reporting, and a strategy adjusted monthly based on what the data shows.</p>
-      </details>
-      <details>
-        <summary>Can I approve sites before links go live?<span class="faq-icon"></span></summary>
-        <p>Yes. You get the target list with metrics (DR, traffic, niche) before we place anything, and a live link sheet you can check at any time.</p>
-      </details>
-      <details>
-        <summary>How do we get started?<span class="faq-icon"></span></summary>
-        <p>Send us your site through the contact form or WhatsApp. We'll run a free audit of your backlink profile and keywords, then send a plan tailored to your niche — no obligation.</p>
-      </details>
+      <% homeFaqs.forEach(function(f) { %>
+        <details>
+          <summary><%= f.q %><span class="faq-icon"></span></summary>
+          <p><%= f.a %></p>
+        </details>
+      <% }); %>
     </div>
   </div>
+
+  <script type="application/ld+json">
+    <%- JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: homeFaqs.map(function(f) {
+        return {
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a }
+        };
+      })
+    }) %>
+  </script>
 </section>
 
 <section class="cta">

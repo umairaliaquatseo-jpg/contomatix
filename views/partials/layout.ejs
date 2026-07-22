@@ -19,6 +19,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">
+    <%- JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Contomatix',
+      url: site.baseUrl,
+      logo: site.baseUrl + '/images/favicon.svg',
+      description: 'Contomatix provides white-hat link building, guest posting, on-page SEO, off-page SEO, and keyword research services.',
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer service',
+        email: site.contactEmail
+      }
+    }) %>
+  </script>
 </head>
 <body class="<%= pageClass %>">
 

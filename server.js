@@ -60,6 +60,27 @@ app.use((req, res, next) => {
 
 // ---------- Routes ----------
 
+app.get('/sitemap.xml', (req, res) => {
+  const staticPaths = ['/', '/about', '/team', '/contact', '/blog', '/privacy-policy', '/terms'];
+  const servicePaths = services.map(s => `/services/${s.slug}`);
+  const blogPaths = blogPosts.map(p => `/blog/${p.slug}`);
+  const urls = [...staticPaths, ...servicePaths, ...blogPaths];
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map(u => `  <url><loc>${site.baseUrl}${u}</loc></url>`).join('\n')}
+</urlset>`;
+
+  res.type('application/xml').send(xml);
+});
+
+app.get('/robots.txt', (req, res) => {
+  res.type('text/plain').send(`User-agent: *
+Allow: /
+
+Sitemap: ${site.baseUrl}/sitemap.xml`);
+});
+
 app.get('/', (req, res) => {
   res.render('pages/home', {
     title: 'Contomatix — Link Building & SEO Services',
