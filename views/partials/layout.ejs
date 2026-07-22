@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css?v=<%= site.assetVersion %>">
   <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
   <meta name="google-site-verification" content="8lh8KHul6gzaUG0L875alrbFWVjjM2H-CaOl2erKwYU" />
 
@@ -72,9 +72,17 @@
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="/js/main.js"></script>
+  <%
+  // Three.js (~650KB) is only needed on pages with a 3D canvas — loading it
+  // on every page (blog, 404, etc.) wasted hundreds of KB of unused JS and
+  // blocked the main thread for nothing (flagged by PageSpeed Insights).
+  var needsThree = ['page-home', 'page-service', 'page-team', 'page-about', 'page-legal', 'page-contact'].includes(pageClass);
+  %>
+  <% if (needsThree) { %>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <% } %>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="/js/main.js?v=<%= site.assetVersion %>" defer></script>
 </body>
 </html>
