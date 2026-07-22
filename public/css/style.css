@@ -184,12 +184,9 @@ h1, h2, h3, h4 {
      duration is. It should be visible the instant it's painted. */
 }
 
-.page-hero-inner > * {
-  opacity: 0;
-  animation: fadeUp 0.4s cubic-bezier(0.22, 0.9, 0.35, 1) forwards;
-}
-.page-hero-inner > *:nth-child(2) { animation-delay: 0.06s; }
-.page-hero-inner > *:nth-child(3) { animation-delay: 0.12s; }
+/* No opacity:0 entrance animation here on purpose: the heading in this
+   block is typically the page's LCP element on inner pages, and animating
+   it in delays that metric for purely cosmetic gain. */
 
 .reveal {
   opacity: 0;
