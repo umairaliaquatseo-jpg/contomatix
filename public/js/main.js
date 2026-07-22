@@ -9,6 +9,9 @@
   function dismiss(value) {
     localStorage.setItem(KEY, value);
     banner.hidden = true;
+    if (value === 'accepted' && typeof gtag === 'function' && window.CONTOMATIX_GA_ID) {
+      gtag('config', window.CONTOMATIX_GA_ID);
+    }
   }
   var acceptBtn = document.getElementById('cookie-accept');
   var declineBtn = document.getElementById('cookie-decline');

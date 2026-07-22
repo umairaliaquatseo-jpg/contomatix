@@ -20,6 +20,18 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
   <meta name="google-site-verification" content="8lh8KHul6gzaUG0L875alrbFWVjjM2H-CaOl2erKwYU" />
+
+  <!-- Google Analytics (GA4) — only starts tracking after cookie consent is accepted -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PP4ESNLJEV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    window.CONTOMATIX_GA_ID = 'G-PP4ESNLJEV';
+    if (localStorage.getItem('contomatix-cookie-consent') === 'accepted') {
+      gtag('config', window.CONTOMATIX_GA_ID);
+    }
+  </script>
   <script type="application/ld+json">
     <%- JSON.stringify({
       '@context': 'https://schema.org',
