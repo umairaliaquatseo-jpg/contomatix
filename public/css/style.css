@@ -1443,6 +1443,9 @@ details[open] .faq-icon::before, details[open] .faq-icon::after { background: #F
 .post-toc-list a:hover, .post-toc-list a.active { color: var(--accent-teal-dim); font-weight: 600; }
 
 .post-content img {
+  width: 100%;
+  height: auto;
+  display: block;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-card);
