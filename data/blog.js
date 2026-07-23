@@ -28,7 +28,7 @@ module.exports = [
 <p>It tends to work best for three overlapping groups. Businesses that want a content channel without turning an employee into the face of the brand — useful for agencies, SaaS companies, and service businesses that would rather the brand be the star. Creators and marketers who want to test a niche before committing to being permanently on camera, since a faceless format is far easier to pivot or shut down without personal fallout. And anyone building in a niche where the information matters more than the messenger — explainer content, data breakdowns, finance psychology, productivity systems, and similar categories where credibility comes from being right and clear, not from being likeable on camera.</p>
 <p>It tends to work less well where trust is built specifically through a recognisable person — coaching, high-ticket consulting, and anything where buyers are essentially buying a relationship with an individual. Those categories usually still benefit from at least some face-forward content alongside anything faceless.</p>
 
-<img src="/images/blog/faceless-digital-marketing-camera-rig.jpg" alt="Camera and microphone rig used for faceless voiceover and B-roll content" width="1600" height="2400">
+<img src="/images/blog/faceless-digital-marketing-camera-rig.jpg" alt="Camera and microphone rig used for faceless voiceover and B-roll content" width="1600" height="1067">
 
 <h2>The Best-Performing Faceless Niches Right Now</h2>
 <ul>
