@@ -1,5 +1,114 @@
 module.exports = [
   {
+    slug: 'b2b-telemarketing',
+    title: 'B2B Telemarketing in 2026: Where Cold Calling Still Works (and Where It Doesn\'t)',
+    category: 'Lead Generation',
+    excerpt: "Is B2B telemarketing dead in 2026, or just misunderstood? Here's where cold calling still earns its cost, where it wastes money, and how it should fit alongside SEO, content, and ads.",
+    date: '2026-07-23',
+    author: 'Umaira Liaquat',
+    image: '/images/blog/b2b-telemarketing-office-cover.jpg',
+    content: `
+<p>A cold call still gets a decision-maker on the phone in under a minute. A cold email sits in a promotions folder for three days, if it lands at all. That single fact is why <strong>B2B telemarketing</strong> never actually died the way LinkedIn thought-leaders keep insisting it did — it just stopped being the whole strategy and became one working part of a bigger one.</p>
+
+<p>This guide covers where B2B telemarketing genuinely still works in 2026, where it wastes money, and — the part most "is cold calling dead" articles skip — exactly how it should sit alongside SEO, content, and paid ads instead of competing with them.</p>
+<p>The companies getting this right aren't choosing between telemarketing and digital marketing. They're using digital channels to make the phone call warmer before it's ever dialed, and using the phone call to close deals that a website form alone never would have. Treated as rivals, both channels underperform. Treated as a system, they compound.</p>
+<p>None of this is an argument for dialing a cold list and hoping. It's an argument for being specific about what a phone call can do that other channels can't, and building the rest of the funnel to feed it good targets instead of random ones.</p>
+
+<img src="/images/blog/b2b-telemarketing-office-cover.jpg" alt="Open-plan B2B sales office with team on desk phones and monitors" width="1600" height="1068">
+
+<h2>What Is B2B Telemarketing, Really?</h2>
+<p>Strip away the negative connotation and B2B telemarketing is simple: a person calls another business, directly, to start or move forward a sales conversation. That covers a wide range in practice — from outbound cold calling against a purchased list, to warm calling leads who downloaded a whitepaper, to account-based calling aimed at five named target companies a sales team has spent months researching.</p>
+<p>Those are not the same activity, even though they get lumped under one label. The first is a numbers game with a low hit rate. The last is closer to relationship-building with a phone as the tool. Most of the bad reputation telemarketing has earned comes from the first kind — high-volume, low-relevance, script-read calling — while the actual return usually comes from the second and third.</p>
+<p>In 2026, the telemarketing that still works looks less like a call centre reading a script and more like a small, well-briefed team calling a tightly defined list, informed by data the marketing side has already gathered.</p>
+
+<h2>Why B2B Telemarketing Still Works When Everything Else Gets Ignored</h2>
+<p>Inboxes are saturated. LinkedIn feeds are saturated. Even well-targeted ads get scrolled past in half a second. A phone ringing is one of the few remaining channels that forces a decision — answer or don't — rather than a channel that can be silently ignored forever.</p>
+<p>That immediacy has a real cost: it's intrusive if done badly, and it scales far worse than an email send or an ad campaign. One person can call maybe 40–60 businesses a day, well; there is no equivalent of "boosting the budget" to call 10,000 overnight without quality collapsing. That's the trade B2B telemarketing always makes — depth and directness in exchange for volume.</p>
+<p>For high-value B2B deals, where one closed account might be worth tens of thousands of pounds a year, that trade is usually worth making. For low-ticket, high-volume products, it almost never is — the economics don't support the time cost of a real conversation per lead. It also helps that a majority of buyers are still open to it: recent data shows most B2B buyers accept sales calls at least occasionally, and a clear majority of senior executives still prefer the phone over email or social outreach (<a href="https://leadiq.com/blog/cold-calling-statistics-in-2026" target="_blank" rel="nofollow noopener">LeadIQ, 2026</a>).</p>
+
+<h2>Where Telemarketing Fits Next to Digital Marketing</h2>
+<p>The useful question isn't "telemarketing or digital marketing" — it's where each one earns its place in the funnel.</p>
+<ul>
+<li><strong>SEO and content</strong> bring in people already searching, and build the credibility a cold call can lean on later ("you may have seen our guide on...") — this starts with solid <a href="/services/keyword-research">keyword research</a> and <a href="/services/on-page-seo">on-page SEO</a> so the right pages actually rank.</li>
+<li><strong>Paid ads</strong> put a brand in front of a defined audience fast, generating the kind of light-touch awareness that makes a follow-up call land as familiar rather than random.</li>
+<li><strong>Email nurture</strong> keeps warm leads moving without a person's time, filtering out the ones who were never going to buy.</li>
+<li><strong>Telemarketing</strong> takes over exactly where the other channels stall — when a lead has gone quiet, when a deal needs a real conversation to move past an objection, or when the target account is specific enough that waiting for them to "find you" isn't a strategy.</li>
+</ul>
+<p>Run in isolation, telemarketing is expensive per contact and digital marketing is slow to convert big-ticket accounts. Run together, digital marketing supplies warmer, better-informed calls, and telemarketing closes the deals digital alone would have left sitting in a CRM untouched.</p>
+
+<img src="/images/blog/b2b-telemarketing-headset.jpg" alt="Headset and laptop set up for B2B outbound sales calls" width="1600" height="1067">
+
+<h2>Building a B2B Telemarketing List That Doesn't Waste Calls</h2>
+<p>Most of what makes telemarketing feel outdated is a bad list, not the phone call itself. Calling a generic, purchased database gets generic results — low pickup, low relevance, and a team that burns out fast because nine in ten calls go nowhere.</p>
+<p>A working list is built, not bought outright: filtered by company size, industry, and buying signals (a recent funding round, a leadership change, a job posting that hints at a gap the product fills), then cross-checked against who has already engaged with the website, downloaded something, or opened an email. Calling someone who has already shown interest is a different conversation entirely from calling a stranger.</p>
+<p>This is also where the digital side pays for itself twice — the same tracking that shows which pages and content are attracting the right visitors also tells the telemarketing team who's worth calling first, based on who's actually engaging.</p>
+
+<h2>What a Good B2B Telemarketing Call Actually Sounds Like</h2>
+<p>The scripts that fail sound like scripts — a fixed pitch delivered regardless of what the person on the other end says. The ones that work sound more like a short, useful conversation with a clear next step, built around a handful of prepared angles rather than a word-for-word script:</p>
+<ul>
+<li>A specific, credible reason for the call — referencing something relevant to that business, not a generic opener</li>
+<li>One or two sharp questions that surface whether there's a real problem worth solving</li>
+<li>A next step that costs the prospect almost nothing — a 15-minute call, not an immediate sales pitch</li>
+<li>Permission to follow up in a specific way, rather than an open-ended "I'll be in touch"</li>
+</ul>
+<p>The goal of a first B2B telemarketing call is rarely to close. It's to earn a second, more qualified conversation — which is a very different skill from the aggressive, close-on-the-first-call approach that gave the channel its reputation.</p>
+
+<h2>The Real Cost of B2B Telemarketing (And When It's Worth It)</h2>
+<p>Telemarketing is not cheap per contact once wages, training, and management time are counted — a skilled caller working a well-built list might have a fully loaded cost of several pounds per attempted call, before any deal closes. That looks expensive next to the cost of an email send, until it's measured against what it actually produces: a direct conversation with a real decision-maker, on a schedule the business controls rather than waiting for them to notice an ad or search a keyword.</p>
+<p>SEO carries its own ongoing cost too — <a href="/services/link-building">link building</a> and <a href="/services/guest-posting">guest posting</a> both take sustained work before they compound into rankings that keep producing leads without a per-call cost. Neither channel is free; the real comparison is which one earns its cost back faster for a given deal size.</p>
+<p>It earns that cost back reliably in a specific set of situations: high average deal values, longer sales cycles where a human conversation genuinely moves things forward, and account-based strategies targeting a short list of named companies where a generic inbound campaign would never reach the right individual anyway.</p>
+<p>It earns its cost back poorly for low-margin products, very short sales cycles decided mostly on price, or markets where the buyer actively prefers to research and buy without ever speaking to a salesperson — increasingly common for smaller, simpler purchases.</p>
+
+<h2>Common B2B Telemarketing Mistakes</h2>
+<p>Most of the frustration businesses report with telemarketing traces back to a small set of repeated mistakes, not the channel itself:</p>
+<ul>
+<li><strong>Calling a cold, unfiltered list</strong> purely for volume, with no signal of actual fit or interest</li>
+<li><strong>Treating the first call as a closing call</strong> instead of a qualifying one, which reads as pushy and burns the contact</li>
+<li><strong>No handoff between marketing and the calling team</strong>, so callers have no idea what a prospect has already read, clicked, or downloaded</li>
+<li><strong>No consistent follow-up system</strong>, so a promising "call me back next quarter" note quietly disappears</li>
+<li><strong>Measuring only calls made, not conversations that led anywhere</strong>, which rewards volume over quality and drives exactly the bad experience that damaged the channel's reputation</li>
+</ul>
+<p>Fix the list and the handoff, and most of what makes telemarketing feel like a relic from a worse era of sales disappears.</p>
+
+<img src="/images/blog/b2b-telemarketing-cold-call.jpg" alt="B2B sales professional on a phone call at a standing desk" width="1600" height="1067">
+
+<h2>Is B2B Telemarketing Worth It in 2026?</h2>
+<p>For high-ticket B2B sales with a real buying committee and a sales cycle measured in months, yes — provided it's aimed at a well-built list and paired with the digital signals that tell a caller who's actually worth ringing. For low-cost, high-volume, self-serve products, it's rarely the right investment; the cost per contact doesn't clear against what a single sale is worth.</p>
+<p>The honest middle ground, which describes most B2B businesses, is that telemarketing works best as a smaller, sharper part of the funnel — not the whole strategy, and not something to write off entirely because a handful of bad experiences with unsolicited calls gave the whole channel a worse name than the well-run version deserves.</p>
+
+<h2>Conclusion</h2>
+<p>B2B telemarketing isn't dead, and it isn't a silver bullet either — it's a channel that rewards precision and punishes volume-for-its-own-sake far more harshly than digital channels do. The businesses getting real value from it in 2026 are the ones feeding it better targets from their SEO, content, and ad data, and using the phone for exactly what it's still better at than anything else: a direct, human conversation with the person who can actually say yes.</p>
+
+<div class="post-faq">
+  <details>
+    <summary>Is B2B telemarketing still effective in 2026?</summary>
+    <p>Yes, for high-value B2B sales with longer sales cycles and a real decision-making process — especially when calls are aimed at a well-researched list rather than a generic purchased database.</p>
+  </details>
+  <details>
+    <summary>What's the difference between cold calling and B2B telemarketing?</summary>
+    <p>Cold calling usually refers to unsolicited calls to a stranger with no prior context. B2B telemarketing is the broader discipline, which includes cold calling but also warm calling engaged leads and targeted account-based calling — generally with far better results than cold calling alone.</p>
+  </details>
+  <details>
+    <summary>Should B2B telemarketing replace digital marketing?</summary>
+    <p>No — they solve different problems. Digital marketing brings in and warms up leads at scale; telemarketing closes the specific, high-value conversations that need a real person on the phone. The strongest B2B strategies run both together.</p>
+  </details>
+  <details>
+    <summary>How do I make a B2B telemarketing list more effective?</summary>
+    <p>Filter it by real buying signals — company size, industry fit, recent funding or hiring changes — and prioritise contacts who've already engaged with your website, content, or emails, rather than calling a purchased list cold.</p>
+  </details>
+  <details>
+    <summary>What's a realistic success rate for B2B cold calling?</summary>
+    <p>Recent industry data puts average cold-call success rates around 2–3% for booking meetings, with top-performing teams reaching 6–10%+ using better targeting and multichannel follow-up (<a href="https://www.cognism.com/blog/cold-calling-statistics" target="_blank" rel="nofollow noopener">Cognism, 2026</a>). Warm calls to engaged leads convert considerably higher, which is the main argument for pairing telemarketing with digital lead generation rather than calling cold.</p>
+  </details>
+</div>
+
+<div class="post-cta">
+  <p>Contomatix helps B2B companies build the SEO, content, and ad system that feeds a telemarketing or sales team better, warmer leads — instead of a cold list and a hope. Want a free audit of where your current lead pipeline stands?</p>
+  <a href="/contact" class="btn btn-primary">Get a free audit &rarr;</a>
+</div>
+`
+  },
+  {
     slug: 'leeds-digital-marketing',
     title: 'Leeds Digital Marketing: The Proven Guide for 2026',
     category: 'Local SEO',
