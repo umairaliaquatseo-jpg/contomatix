@@ -1,7 +1,7 @@
 module.exports = [
   {
     slug: 'b2b-telemarketing',
-    title: 'B2B Telemarketing in 2026: Where Cold Calling Still Works (and Where It Doesn\'t)',
+    title: 'B2B Telemarketing in 2026: Where Cold Calling Still Works and Where It Fails',
     category: 'Lead Generation',
     excerpt: "Is B2B telemarketing dead in 2026, or just misunderstood? Here's where cold calling still earns its cost, where it wastes money, and how it should fit alongside SEO, content, and ads.",
     date: '2026-07-23',
