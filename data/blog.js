@@ -1,5 +1,127 @@
 module.exports = [
   {
+    slug: 'local-seo-edmonds-wa-2026',
+    title: 'Local SEO in Edmonds, WA: The Complete Guide for 2026',
+    category: 'Local SEO',
+    excerpt: 'Local search engine optimization in Edmonds, WA means competing for a specific, ferry-town customer base — here is what actually moves the needle for Edmonds businesses in 2026.',
+    date: '2026-07-25',
+    author: 'Umaira Liaquat',
+    image: '/images/blog/local-seo-edmonds-ferry.jpg',
+    content: `
+<p>Edmonds, Washington is a small city with an outsized local economy — a walkable downtown, a working ferry terminal connecting it to Kitsap County, and a business community organized enough to run its own downtown alliance. For a local business here, "local search engine optimization" isn't an abstract marketing buzzword; it's the difference between showing up when someone searches "plumber near me" from a house three blocks from the ferry dock, and not showing up at all.</p>
+<p>This guide covers what <strong>local SEO in Edmonds, WA</strong> actually involves in 2026, what makes this specific market different from a generic "small city SEO" playbook, and the concrete steps that move a local business up the map pack and into real phone calls.</p>
+
+<img src="/images/blog/local-seo-edmonds-ferry.jpg" alt="Local business search result on Google Maps, showing ratings and directions" width="1100" height="733">
+
+<h2>Why Edmonds Is a Distinct Local SEO Market</h2>
+<p>Edmonds isn't a generic Seattle suburb from a search-behaviour standpoint. It has its own dedicated <a href="https://edmondschamber.com/" target="_blank" rel="nofollow noopener">Chamber of Commerce</a>, originally chartered in 1907 and now serving nearly 500 local businesses and organizations, and a separate <strong>Edmonds Downtown Alliance</strong> — a business improvement district with over 350 members funding marketing, safety, and beautification specifically for the downtown core. Few cities this size have that level of organized local business infrastructure, which also means local search competition is denser than the population alone would suggest.</p>
+<p>The ferry terminal adds another layer: a meaningful share of local search traffic includes visitors and commuters passing through on the Edmonds-Kingston route, not just residents. A business that optimizes only for "Edmonds" as a static residential market is missing this transient, ferry-linked search volume.</p>
+<p>There's also a density effect worth naming directly. In a larger metro area, a mediocre local SEO setup can still generate some traffic simply because search volume is enormous. In a city the size of Edmonds, the total search volume for any given service is much smaller, which means the businesses that rank in the top three map-pack results capture a disproportionate share of the calls — and everyone else gets close to nothing. Being "pretty good" at local SEO in a small, organized market like this one isn't good enough; the gap between position one and position five in the map pack is the gap between a full schedule and an empty one.</p>
+
+<h2>How Local Search Rankings Actually Work</h2>
+<p>Google's local ranking system weighs three broad factors: relevance (does this business match what was searched), distance (how close is it to the searcher or the searched location), and prominence (how well-known and well-reviewed is it, both online and offline). Most of what follows in this guide is really about deliberately improving those three inputs rather than guessing at tactics.</p>
+<p>Relevance is mostly a content and category problem — is the Google Business Profile category accurate, and does the website's content clearly match the service being searched. Distance is largely fixed by the business's actual location and service-area settings, though incorrect service-area configuration is a surprisingly common self-inflicted problem. Prominence is the slowest to build and the easiest to neglect — it's the accumulation of reviews, citations, local links, and general online visibility over time.</p>
+
+<h2>What Local SEO Actually Involves for an Edmonds Business</h2>
+<ul>
+<li><strong>Google Business Profile optimization</strong> — accurate categories, service areas, hours, and photos, kept current rather than set up once and ignored</li>
+<li><strong>Consistent NAP data</strong> (Name, Address, Phone) across the website, directories, and citations — inconsistency here is one of the most common, avoidable reasons a business underperforms in the map pack</li>
+<li><strong>Locally-relevant <a href="/services/keyword-research">keyword research</a></strong> — targeting how people in and around Edmonds actually search, including ferry-adjacent and neighborhood-specific terms, not just "[service] + Edmonds"</li>
+<li><strong>On-page structure</strong> — proper <a href="/services/on-page-seo">on-page SEO</a> including location pages, schema markup, and content that actually answers what a local searcher needs</li>
+<li><strong>Review generation and management</strong> — a steady, ongoing flow of reviews rather than a burst early on that goes stale</li>
+</ul>
+
+<img src="/images/blog/local-seo-edmonds-storefront.jpg" alt="Phone screen showing Google My Business and Google Maps apps" width="1200" height="800">
+
+<h2>Google Business Profile: The Highest-Leverage Fix</h2>
+<p>For most small Edmonds businesses, the single fastest local SEO win is a properly maintained Google Business Profile. This means the correct primary category (not the broadest one available), accurate service-area settings if the business travels to customers, real photos updated seasonally, and prompt responses to every review — not just the negative ones.</p>
+<p>Businesses that treat their profile as a living asset — updating it around seasonal changes like ferry schedule shifts, downtown events, or holiday hours — consistently outrank competitors who set it up once and never touch it again.</p>
+<p>A few specific, often-overlooked profile elements are worth checking directly: whether secondary categories are filled in accurately (not just the primary one), whether the "services" and "products" sections are populated rather than left blank, whether the business description actually uses the terms customers search rather than pure marketing language, and whether Google Posts are used at all. Most competitors ignore Google Posts entirely, which makes them a comparatively easy way to stand out with minimal effort — a weekly post about a promotion, a completed project, or a local event keeps the profile active in Google's eyes and gives searchers a reason to choose one listing over another that looks abandoned.</p>
+<p>Photos deserve more attention than they typically get. Profiles with a steady stream of real, recent photos — of the actual location, staff, and completed work — measurably outperform profiles with a handful of stock-like images uploaded once at setup. This matters even more in a visually distinctive place like Edmonds, where a genuine photo of a shopfront on a recognizable downtown street reads as more trustworthy than a generic interior shot that could be anywhere.</p>
+
+<h2>Local Citations and NAP Consistency</h2>
+<p>Every directory listing, chamber of commerce page, and local mention should list the exact same business name, address, and phone number. This sounds trivial until you actually audit a real business's citations and find three different phone number formats and two address variations across a dozen listings — which is far more common than most owners assume, and which measurably confuses the location-matching signals Google relies on for local rankings.</p>
+<p>Being listed with the <a href="https://edmondschamber.com/about-us" target="_blank" rel="nofollow noopener">Edmonds Chamber of Commerce</a> and similar local organizations also does double duty: it's a legitimate citation source and a genuine community connection, which matters for both SEO and real referral relationships.</p>
+<p>Beyond the chamber, a healthy citation profile for an Edmonds business typically includes the major general directories, industry-specific directories relevant to the business type, and any local community sites or event listings the business genuinely participates in. The goal isn't collecting the largest possible number of listings — a smaller set of accurate, consistent citations on relevant sites outperforms a large set riddled with old addresses, defunct phone numbers, or duplicate listings that confuse rather than reinforce the business's identity.</p>
+<p>It's worth doing a full citation audit at least once, even for an established business: search the business name across the main directories, note every variation of the name, address, and phone number that turns up, and correct or remove anything inconsistent. Old listings from a previous address or a discontinued phone number are more common than owners expect, especially for businesses that have moved within Edmonds or changed numbers at some point.</p>
+
+<img src="/images/blog/local-seo-edmonds-mainstreet.jpg" alt="Five gold stars representing online customer reviews" width="1200" height="800">
+
+<h2>Building a Real Review Pipeline</h2>
+<p>Reviews function as both a ranking signal and the single biggest factor in whether a searcher actually picks up the phone once they've found a business. The mistake most Edmonds businesses make isn't neglecting reviews entirely — it's treating review requests as an occasional afterthought rather than a built-in step in every completed job or transaction.</p>
+<p>A workable system looks like this: ask for a review at the natural moment a customer's satisfaction is highest — right after a job is completed or a purchase is picked up — rather than days later in a generic follow-up email that gets ignored. Make the ask specific and easy, with a direct link to the Google review form rather than a vague "please review us." And respond to every review, positive and negative, within a reasonable window. A thoughtful, professional response to a negative review often does more to build trust with future customers reading it than a string of five-star reviews with no owner engagement at all.</p>
+<p>Volume matters too, but consistency matters more than volume. A business generating two or three genuine reviews a month, every month, builds a stronger long-term signal than one that gets twenty reviews in an initial push and then goes quiet for a year.</p>
+
+<h2>Content That Matches How Edmonds Residents Actually Search</h2>
+<p>Generic "[service] in Edmonds, WA" landing pages rank worse than content that reflects real local specificity — mentioning actual neighborhoods, the downtown waterfront area, proximity to the ferry terminal, or seasonal patterns tied to tourism and commuting. This is where <a href="/services/keyword-research">proper keyword research</a> pays for itself: finding the specific, lower-competition phrases real Edmonds searchers use, rather than guessing at generic city-plus-service combinations.</p>
+<p>Beyond a single location page, businesses serving Edmonds alongside neighboring areas like Lynnwood, Mountlake Terrace, or Woodway should generally build distinct, non-duplicated pages for each area rather than one generic page with a list of city names swapped in and out. Google's algorithms are good at detecting thin, templated location pages, and a handful of genuinely differentiated pages will outperform a dozen near-identical ones every time.</p>
+<p>Blog-style content also has a role here beyond direct ranking value — answering real local questions (parking near the ferry terminal, typical seasonal demand patterns, neighborhood-specific considerations) builds the kind of topical depth that supports E-E-A-T signals and gives the business more entry points for organic search traffic beyond its core service pages.</p>
+
+<h2>Measuring Whether Local SEO Is Actually Working</h2>
+<p>It's easy to fixate on map-pack position for a single keyword, but that's an incomplete picture. A more reliable set of metrics to track includes Google Business Profile insights (views, search queries, and the ratio of calls to direction requests), organic traffic to location-specific pages, the trend in review count and average rating over time, and — most importantly — actual booked jobs or sales that can be traced back to a local search or map listing. Rankings that don't eventually show up in one of these downstream metrics aren't actually delivering value, regardless of how good they look in a rank tracker.</p>
+
+<h2>DIY Local SEO vs. Hiring It Out</h2>
+<p>A small Edmonds business with the time and patience can realistically handle the basics — claiming and filling out a Google Business Profile, fixing obvious citation inconsistencies, and asking happy customers for reviews. Where DIY efforts typically stall is in the ongoing, ongoing-forever nature of the work: ranking well requires more or less continuous attention to citations, content, reviews, and competitive shifts, not a one-time setup.</p>
+<p>For a business owner already running the actual business, that ongoing maintenance is often where local SEO gets deprioritized until a competitor visibly overtakes them in the map pack. That's usually the point where bringing in dedicated help — even on a modest, defined scope — pays for itself against the cost of continuing to lose calls to a better-optimized competitor.</p>
+
+<h2>Common Local SEO Mistakes in a Market Like Edmonds</h2>
+<ul>
+<li><strong>Treating "Edmonds" as one uniform audience</strong>, ignoring the ferry-commuter and visitor search volume alongside resident search volume</li>
+<li><strong>Inconsistent NAP data</strong> across directories, which quietly undermines otherwise solid on-page work</li>
+<li><strong>An abandoned Google Business Profile</strong> — set up once, never updated with current photos, hours, or posts</li>
+<li><strong>No <a href="/services/link-building">link building</a> from genuinely local sources</strong> — chamber directories, local news coverage, and community organizations carry more local-relevance weight than generic national directories</li>
+<li><strong>Ignoring reviews</strong> until a bad one shows up, rather than building a steady, ongoing review pipeline</li>
+</ul>
+
+<h2>Is Local SEO Worth It for a Small Edmonds Business?</h2>
+<p>Given the density of organized local business competition — nearly 500 Chamber members and 350+ Downtown Alliance members in a city of this size — the businesses that invest in proper local SEO have a real, compounding advantage over the ones that don't. Local SEO is also considerably cheaper per lead than paid ads once it's established, since rankings keep generating calls without an ongoing per-click cost.</p>
+<p>The comparison to paid ads is worth spelling out. A Google Ads campaign can generate calls immediately, but the moment the budget stops, so does the traffic — nothing carries over. A well-built local SEO position keeps generating calls for months or years with only ongoing maintenance cost, not a continuous per-click spend. That doesn't make paid ads a bad idea; many Edmonds businesses run both, using ads for immediate volume while local SEO compounds in the background. But treating local SEO as optional because ads produce faster results misses that the two are solving different problems on different timelines.</p>
+
+<h2>Conclusion</h2>
+<p>Local SEO in Edmonds isn't about generic small-city tactics — it's about understanding a specific market: a dense, organized local business community, a ferry-linked flow of visitors and commuters, and a walkable downtown where reputation and consistency compound over time. Businesses that get the fundamentals right — a properly maintained Google Business Profile, consistent citations, locally-specific content, and a genuine review pipeline — consistently outperform competitors treating Edmonds like an interchangeable suburb.</p>
+
+<div class="post-faq">
+  <details>
+    <summary>How much does local SEO cost for a small business in Edmonds, WA?</summary>
+    <p>Costs vary by scope, but most local SEO work is priced as an ongoing monthly retainer rather than a one-off project, since maintaining rankings requires continuous citation, content, and review management.</p>
+  </details>
+  <details>
+    <summary>How long does local SEO take to show results in a market like Edmonds?</summary>
+    <p>Google Business Profile improvements can shift map-pack visibility within a few weeks. Broader keyword rankings across a full service area typically take a few months of consistent work to build out.</p>
+  </details>
+  <details>
+    <summary>Is Google Business Profile or a website more important for local SEO?</summary>
+    <p>Both matter, but for local "near me" searches, Google Business Profile signals often carry the most immediate weight. A strong website still matters for content depth, trust, and converting the traffic once someone clicks through.</p>
+  </details>
+  <details>
+    <summary>Does the Edmonds ferry terminal actually affect local search behaviour?</summary>
+    <p>Yes — it brings a steady flow of visitors and commuters searching for services while passing through, in addition to resident search volume. Businesses that only optimize for a purely residential audience miss this traffic.</p>
+  </details>
+  <details>
+    <summary>Do online reviews really affect local rankings?</summary>
+    <p>Yes — review count, recency, and response rate are all factored into local ranking signals, alongside their obvious effect on whether a searcher actually chooses to call.</p>
+  </details>
+  <details>
+    <summary>How many Google reviews does a business need to rank well?</summary>
+    <p>There's no fixed threshold, since review count is weighed alongside rating, recency, and competitor benchmarks. A steady, ongoing flow of genuine reviews consistently outperforms a one-time push to a specific number.</p>
+  </details>
+  <details>
+    <summary>Should an Edmonds business build separate pages for nearby cities like Lynnwood or Mountlake Terrace?</summary>
+    <p>Yes, provided each page has genuinely distinct, non-templated content. Thin pages that only swap the city name rarely rank and can flag the whole site as low-quality to Google.</p>
+  </details>
+  <details>
+    <summary>Can a business do local SEO without hiring an agency?</summary>
+    <p>Yes, especially for the basics like claiming a Google Business Profile and fixing citation inconsistencies. The challenge is usually sustaining the ongoing work — reviews, content, and competitive monitoring — alongside running the actual business.</p>
+  </details>
+</div>
+
+<div class="post-cta">
+  <p>Contomatix helps local businesses build the Google Business Profile, citation, and content foundation that actually drives calls — not just rankings for their own sake. Want a free local SEO audit for your Edmonds business?</p>
+  <a href="/contact" class="btn btn-primary">Get a free audit &rarr;</a>
+</div>
+`
+  },
+  {
     slug: 'digital-marketing-agency-mexico-2026',
     title: '6 Best Digital Marketing Agencies in Mexico for 2026',
     category: 'Local SEO',
